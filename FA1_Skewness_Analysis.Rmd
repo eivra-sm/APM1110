@@ -1,0 +1,77 @@
+---
+title: "FA1 Skewness and Data Visualization Analysis"
+author: "Arvie M. Sinocruz"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introduction
+This document calculates Pearson's skewness coefficient for examination subjects and visualizes student scores using stem-and-leaf plots and boxplots.
+
+## Load Required Libraries
+```{r}
+library(readr)
+library(dplyr)
+```
+
+## Read Dataset
+```{r}
+data <- read.csv("results.csv")
+head(data)
+```
+
+## Task 1: Calculate Pearson's Skewness
+```{r}
+calculate_skewness <- function(x) {
+  mean_x <- mean(x, na.rm = TRUE)
+  median_x <- median(x, na.rm = TRUE)
+  sd_x <- sd(x, na.rm = TRUE)
+  
+  skewness <- (3 * (mean_x - median_x)) / sd_x
+  return(skewness)
+}
+
+# Apply function to numerical columns (excluding IDs/names if present)
+skew_values <- sapply(data[, -1], calculate_skewness)  # Adjust column selection if necessary
+
+# Display results
+skew_values
+```
+
+## Task 2a: Stem-and-Leaf Display by Gender
+```{r}
+# Split data by gender
+male_data <- data %>% filter(Gender == "Male")
+female_data <- data %>% filter(Gender == "Female")
+
+# Display stem-and-leaf plots
+cat("Stem-and-leaf plot for Male Students:")
+stem(male_data$Scores)  # Replace 'Scores' with the actual column name
+
+cat("\nStem-and-leaf plot for Female Students:")
+stem(female_data$Scores)
+```
+
+## Task 2b: Boxplot by Gender
+```{r}
+boxplot(Scores ~ Gender, data = data, 
+        main = "Boxplot of Scores by Gender",
+        xlab = "Gender",
+        ylab = "Scores",
+        col = c("lightblue", "pink"))
+
+# Add mean points
+means <- tapply(data$Scores, data$Gender, mean, na.rm = TRUE)
+points(1:length(means), means, col="red", pch=19)
+```
+
+## Conclusion
+- Skewness values indicate the distribution's symmetry.
+- The stem-and-leaf plot preserves raw data, while boxplots show overall distribution trends.
+
+---
+**Next Steps:** Render this file (`Knit` in RStudio) and upload it to GitHub for submission.
