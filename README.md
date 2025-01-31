@@ -3,7 +3,7 @@
 This is for the completion for **Formative Assessment #1** in APM110 or Probability and Probability Distribution.
 
 ```
-Members:
+** Members: **
 - Arvie M. Sinocruz
 - Consuelo B. Mercado
 ```
