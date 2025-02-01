@@ -47,7 +47,7 @@ stem(male_scores)
 ##   8 | 6
 ```
 
-Figure 1: Stem-and-Leaf Display for Male Students
+**Figure 1:** *Stem-and-Leaf Display for Male Students*
 
 ### Stem-and-Leaf Display fo Females
 
@@ -77,7 +77,7 @@ stem(female_scores)
 ##   8 | 01335
 ```
 
-Figure 2: Stem-and-Leaf Display for Female Students
+**Figure 2:** *Stem-and-Leaf Display for Female Students*
 
 ### Stem-and-Leaf plot vs. Histogram
 
@@ -96,8 +96,7 @@ boxplot(female_scores, male_scores, main = "Comparison of Scores in Programming 
 ```
 
 ![](boxplot.png)
-
-Figure 3: Box Diagram of Student Scores in the Java Programming Examination
+**Figure 3:** *Box Diagram of Student Scores in the Java Programming Examination*
 
 The comparative analysis of scores for the Java programming examination among female and male students is shown by the boxplot. The median score from female students appears to be around 68 and that of male students around 50. This therefore suggests that, on average, the scores for female students were better than that of male students. The spread of scores for female students is greater because the IQR is from around 52 to 78. For the males, the IQR is around 38 to 55, which means their scores are closer to the middle. On the other hand, the maximum and minimum scores can be analyzed, showing that the female students scored between about 40 and 82, whereas the male students had a larger range from around 30 to 72. This means that although some male students did extremely well, the lowest-scoring male students were much lower than their female counterparts. Additionally, the existence of an outlier above 80 in the male group indicates that at least one male student performed above the norm.
 
@@ -105,4 +104,4 @@ Overall, the analysis shows that female students performed better than their cou
 
 **Reference:**
 
-Pallavi. (2021b, November 18). Stem and leaf plot. Helping With Math. <https://helpingwithmath.com/stem-and-leaf-plot/>
+Pallavi. (2021b, November 18). *Stem and leaf plot*. Helping With Math. <https://helpingwithmath.com/stem-and-leaf-plot/>
