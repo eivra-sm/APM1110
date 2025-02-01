@@ -9,8 +9,8 @@ editor_options:
     wrap: 72
 ---
 
-github link:
-<https://github.com/eivra-sm/APM1110/blob/f4dcda335d4473c28ff111f2145019d45f447287/SEC%201-FA%201%20Group%203%20-%20MERCADO%2C%20C%3B%20SINOCRUZ%2C%20A%20-%20FA1.Rmd>
+**github link:** 
+<https://github.com/eivra-sm/APM1110/blob/main/SEC%201-FA%201%20Group%203%20-%20MERCADO,%20C;%20SINOCRUZ,%20A%20-%20FA1.Rmd>
 # Question 1
 
 1\. Write the skewness program, and use it to calculate the skewness
