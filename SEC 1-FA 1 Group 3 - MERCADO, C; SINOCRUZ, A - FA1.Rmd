@@ -121,7 +121,7 @@ cat("\n Stem-and-Leaf display for Male students:\n")
 stem(male_scores)
 ```
 
-***Figure 1:** Stem-and-Leaf Display for Male Students*
+**Figure 1:** *Stem-and-Leaf Display for Male Students*
 
 ### Stem-and-Leaf Display fo Females
 
@@ -135,7 +135,7 @@ cat("\n Stem-and-Leaf display for Female students:\n")
 stem(female_scores)
 ```
 
-***Figure 2**: Stem-and-Leaf Display for Female Students*
+**Figure 2**: *Stem-and-Leaf Display for Female Students*
 
 ### Stem-and-Leaf plot vs. Histogram
 
@@ -187,7 +187,7 @@ boxplot(female_scores, male_scores,
         names = c("Female","Male"))
 ```
 
-***Figure 3:** Box Diagram of Student Scores in the Java Programming
+**Figure 3:** *Box Diagram of Student Scores in the Java Programming
 Examination*
 
 The comparative analysis of scores for the Java programming examination
@@ -224,6 +224,7 @@ Green, J. L., Manski, S. E., Hansen, T. A., & Broatch, J. E. (2023,
 January 1). *Descriptive statistics* (R. J. Tierney, F. Rizvi, & K.
 Ercikan, Eds.). ScienceDirect; Elsevier.
 <https://www.sciencedirect.com/science/article/abs/pii/B9780128186305100831>
+
 
 Pallavi. (2021b, November 18). *Stem and leaf plot*. Helping With Math.
 <https://helpingwithmath.com/stem-and-leaf-plot/>
