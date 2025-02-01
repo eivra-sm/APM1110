@@ -1,8 +1,13 @@
-
-title: "SEC 1-FA1 GROUP 3-MERCADO, C; SINOCRUZ, A-FA1"
-author: "Mercado, Consuelo and Sinocruz, Arvie"
-date: "2025-01-31"
-output: pdf_document
+---
+output:
+  pdf_document: default
+  html_document: default
+---
+#FA1
+================
+Mercado, Consuelo B.
+Sinocruz, Arvie M.
+Date: 2024-02-01
 
 
 
