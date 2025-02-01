@@ -1,9 +1,10 @@
-
+----
 title: "SEC 1-FA1 GROUP 3-MERCADO, C; SINOCRUZ, A-FA1"
 author: "Mercado, Consuelo and Sinocruz, Arvie"
 date: "2025-01-31"
 output: pdf_document
-
+---
+# SEC 1-FA1 GROUP 3-MERCADO, C; SINOCRUZ, A-FA1
 
 ```{r, include=FALSE}
 options(tinytex.verbose = TRUE)
