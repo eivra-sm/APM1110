@@ -95,7 +95,7 @@ boxplot(female_scores, male_scores, main = "Comparison of Scores in Programming 
         names = c("Female","Male"))
 ```
 
-![](boxplot.png){width="628"}
+![](boxplot.png)
 
 Figure 3: Box Diagram of Student Scores in the Java Programming Examination
 
