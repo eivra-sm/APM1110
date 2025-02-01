@@ -1,10 +1,12 @@
-# FA1
-
-Mercado, Consuelo B.
-
-Sinocruz, Arvie M.
-
-Date: 2024-02-01
+---
+title: "SEC 1-FA 1 Group 3 - Mercado, C; Sinocruz, A - FA1"
+author: "Mercado, C & Sinocruz, A"
+date: "2025-02-01"
+output: pdf_document
+editor_options: 
+  markdown: 
+    wrap: 72
+---
 
 # Question 1
 
