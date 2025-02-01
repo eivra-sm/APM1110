@@ -5,6 +5,7 @@ Mercado, Consuelo B.
 Sinocruz, Arvie M.
 
 Date: 2024-02-01
+# Question #1
 
 # Question #2
 
@@ -90,9 +91,10 @@ Stem-and-leaf also excels or shows skills in identifying outliers, since every s
 In this section, we will construct the box-plot for male and female scores based on the data given in Exercise 1.1.
 
 ```{r, echo=FALSE, fig.align="center"}
-boxplot(female_scores, male_scores, main = "Comparison of Scores in Programming Exam", xlab = "Gender", ylab = "Exam Scores", col = c("pink", "lightblue"), names = c("Female","Male"))
+boxplot(female_scores, male_scores, main = "Comparison of Scores in Programming Exam",
+        xlab = "Gender", ylab = "Exam Scores", col = c("pink", "lightblue"),
+        names = c("Female","Male"))
 ```
-
 ![](boxplot.png)
 
 **Figure 3:** *Box Diagram of Student Scores in the Java Programming Examination*
