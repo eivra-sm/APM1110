@@ -26,7 +26,8 @@ results.txt (results.csv). Is it a reasonable approximation? 
 
 ### Load the necessary libraries and data
 
-```{library(readr)}
+```{r}
+library(readr)
 library(moments)
 df <- read_csv("C:\\Users\\CONSUELO B. MERCADO\\OneDrive\\Documents\\r fas\\results.csv")
 
