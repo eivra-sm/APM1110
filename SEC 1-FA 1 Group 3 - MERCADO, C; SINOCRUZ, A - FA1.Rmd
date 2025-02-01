@@ -1,5 +1,5 @@
 ---
-title: "SEC 1-FA 1 Group 3 - Mercado, C; Sinocruz, A - FA1"
+title: "Formative Assessment 1"
 author: "MERCADO, C & SINOCRUZ, A"
 date: "2025-02-01"
 
