@@ -219,7 +219,7 @@ that female students tend to produce better overall success, but if
 there is much variation, excellent potential is realized in male
 students.
 
-### **Reference:**
+### Reference:
 
 Green, J. L., Manski, S. E., Hansen, T. A., & Broatch, J. E. (2023,
 January 1). *Descriptive statistics* (R. J. Tierney, F. Rizvi, & K.
