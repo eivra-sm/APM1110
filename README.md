@@ -4,5 +4,5 @@ This is for the completion for **Formative Assessments** in APM 1110 or Probabil
 
 Members:
 - Arvie M. Sinocruz
-- Consuelo b. Mercado
+- Consuelo B. Mercado
 
