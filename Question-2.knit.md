@@ -98,7 +98,11 @@ Figure 2: Stem-and-Leaf Display for Female Students
 In this section, we will construct the box-plot for male and female scores based on the data given in Exercise 1.1.
 
 
-\begin{center}\includegraphics{Question-2_files/figure-latex/unnamed-chunk-2-1} \end{center}
+```{r, echo=FALSE, fig.align="center"}
+boxplot(female_scores, male_scores, main = "Comparison of Scores in Programming Exam",
+        xlab = "Gender", ylab = "Exam Scores", col = c("pink", "lightblue"),
+        names = c("Female","Male"))
+```
 Figure 3: Box Diagram of Student Scores in the Java Programming Examination
 
 
