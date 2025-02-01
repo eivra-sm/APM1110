@@ -1,3 +1,8 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
 # FA1
 
 Mercado, Consuelo B.
@@ -74,17 +79,10 @@ exact_skewness, Pearson_Skewness = pearson_skewness)
 skewness_results
 ```
 
-## Analysis
+### Analysis
 
-According to the research (Green et al., 2023), skewness is used to
-describe the lack of symmetries in a data distribution. In this problem,
-we calculate the **Exact Skewness** and **Pearson Approximation** for
-the four subjects in results.csv. The first two subjects, arch1 and
-prog1 showed a little difference in their exact and pearson values.
-However, in arch2, the exact skewness is positive while the other is
-negative. Also in the fourth subject, prog2, there is a big difference
-in their skewness. This indicates that the accuracy of Pearson
-Approximation varies depending on the data.
+According to the research (Green et al., 2023), skewness is used to describe the lack of symmetries in a data distribution. In this problem, we calculate the *Exact Skewness* and *Pearson Approximation* for the four subjects in results.csv. The first two subjects, arch1 and prog1 showed a little difference in their exact and pearson values. However, in arch2, the exact skewness is positive while the other is negative. Also in the fourth subject, prog2, there is a big difference in their skewness. This shows that Pearson Skewness is reasonable approximation for data distribution but it still needs other statistical method just like the Exact Skewness to check its accuracy. 
+
 
 # Question 2
 
@@ -127,7 +125,7 @@ stem(male_scores)
 ##   8 | 6
 ```
 
-**Figure 1:** *Stem-and-Leaf Display for Male Students*
+Figure 1: Stem-and-Leaf Display for Male Students
 
 ### Stem-and-Leaf Display fo Females
 
@@ -157,7 +155,7 @@ stem(female_scores)
 ##   8 | 01335
 ```
 
-**Figure 2:** *Stem-and-Leaf Display for Female Students*
+Figure 2: Stem-and-Leaf Display for Female Students
 
 ### Stem-and-Leaf plot vs. Histogram
 
@@ -174,9 +172,10 @@ boxplot(female_scores, male_scores, main = "Comparison of Scores in Programming 
         xlab = "Gender", ylab = "Exam Scores", col = c("pink", "lightblue"),
         names = c("Female","Male"))
 ```
+
 ![](boxplot.png)
 
-**Figure 3:** *Box Diagram of Student Scores in the Java Programming Examination*
+Figure 3: Box Diagram of Student Scores in the Java Programming Examination
 
 The comparative analysis of scores for the Java programming examination among female and male students is shown by the boxplot. The median score from female students appears to be around 68 and that of male students around 50. This therefore suggests that, on average, the scores for female students were better than that of male students. The spread of scores for female students is greater because the IQR is from around 52 to 78. For the males, the IQR is around 38 to 55, which means their scores are closer to the middle. On the other hand, the maximum and minimum scores can be analyzed, showing that the female students scored between about 40 and 82, whereas the male students had a larger range from around 30 to 72. This means that although some male students did extremely well, the lowest-scoring male students were much lower than their female counterparts. Additionally, the existence of an outlier above 80 in the male group indicates that at least one male student performed above the norm.
 
@@ -184,4 +183,12 @@ Overall, the analysis shows that female students performed better than their cou
 
 **Reference:**
 
-Pallavi. (2021b, November 18). *Stem and leaf plot*. Helping With Math. <https://helpingwithmath.com/stem-and-leaf-plot/>
+Green, J. L., Manski, S. E., Hansen, T. A., & Broatch, J. E. (2023,
+January 1). *Descriptive statistics* (R. J. Tierney, F. Rizvi, & K.
+Ercikan, Eds.). ScienceDirect; Elsevier.
+<https://www.sciencedirect.com/science/article/abs/pii/B9780128186305100831>
+
+
+
+Pallavi. (2021b, November 18). *Stem and leaf plot*. Helping With Math.
+<https://helpingwithmath.com/stem-and-leaf-plot/>
