@@ -1,12 +1,10 @@
 ---
-title: 'Formative Assessment #1'
+title: "SEC 1-FA 1 Group 3 - Mercado, C; Sinocruz, A - FA1"
 author: "MERCADO, C & SINOCRUZ, A"
 date: "2025-02-01"
-output:
-  pdf_document: default
-  word_document: default
-editor_options:
-  markdown:
+output: pdf_document
+editor_options: 
+  markdown: 
     wrap: 72
 ---
 
@@ -110,34 +108,19 @@ and female scores based on the data given in Exercise 1.1.
 
 ### Stem-and-Leaf Display for Males
 
-``` {r}
+```{r}
 male_scores <-c(48, 49, 49, 30, 30, 31, 32, 35, 37, 41, 86, 42, 51, 53, 56, 42, 44,
                  50, 51, 65, 67, 51, 56, 58, 64, 64, 75)
 cat("\n Stem-and-Leaf display for Male students:\n")
 ```
 
-```         
-## 
-##  Stem-and-Leaf display for Male students:
-```
 
-``` {r}
+```{r}
 stem(male_scores)
 ```
 
-```         
-## 
-##   The decimal point is 1 digit(s) to the right of the |
-## 
-##   3 | 001257
-##   4 | 1224899
-##   5 | 01113668
-##   6 | 4457
-##   7 | 5
-##   8 | 6
-```
 
-**Figure 1:** *Stem-and-Leaf Display for Male Students*
+Figure 1: Stem-and-Leaf Display for Male Students
 
 ### Stem-and-Leaf Display fo Females
 
@@ -147,33 +130,18 @@ female_scores <- c(57, 59, 78, 79, 60, 65, 68, 71, 75, 48, 51, 55, 56, 41, 43, 4
 cat("\n Stem-and-Leaf display for Female students:\n")
 ```
 
-```         
-## 
-##  Stem-and-Leaf display for Female students:
-```
 
-``` {r}
+```{r}
 stem(female_scores)
 ```
 
-```         
-## 
-##   The decimal point is 1 digit(s) to the right of the |
-## 
-##   4 | 1348
-##   5 | 15679
-##   6 | 058
-##   7 | 155889
-##   8 | 01335
-```
 
-**Figure 2:** *Stem-and-Leaf Display for Female Students*
+Figure 2: Stem-and-Leaf Display for Female Students
 
 ### Stem-and-Leaf plot vs. Histogram
 
-
 Stem-and-leaf plots have several advantages over traditional histograms
-for smaller to medium-sized datasets. It also allows easy extraction of
+for smaller to medium-sized data sets. It also allows easy extraction of
 particular values, unlike histograms, which pool data into bins and
 therefore lose individual data points. In addition, stem-and-leaf plots
 are relatively easy to construct, involving minimal work or effort than
@@ -220,10 +188,8 @@ boxplot(female_scores, male_scores,
         names = c("Female","Male"))
 ```
 
-![](boxplot.png)
-
-**Figure 3:** *Box Diagram of Student Scores in the Java Programming
-Examination*
+Figure 3: Box Diagram of Student Scores in the Java Programming
+Examination
 
 The comparative analysis of scores for the Java programming examination
 among female and male students is shown by the boxplot. The median score
@@ -253,14 +219,14 @@ that female students tend to produce better overall success, but if
 there is much variation, excellent potential is realized in male
 students.
 
+
+
 **Reference:**
 
 Green, J. L., Manski, S. E., Hansen, T. A., & Broatch, J. E. (2023,
 January 1). *Descriptive statistics* (R. J. Tierney, F. Rizvi, & K.
 Ercikan, Eds.). ScienceDirect; Elsevier.
 <https://www.sciencedirect.com/science/article/abs/pii/B9780128186305100831>
-
-
 
 Pallavi. (2021b, November 18). *Stem and leaf plot*. Helping With Math.
 <https://helpingwithmath.com/stem-and-leaf-plot/>
