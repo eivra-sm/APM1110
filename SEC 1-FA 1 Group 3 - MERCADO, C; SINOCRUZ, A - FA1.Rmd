@@ -171,6 +171,7 @@ stem(female_scores)
 
 ### Stem-and-Leaf plot vs. Histogram
 
+
 Stem-and-leaf plots have several advantages over traditional histograms
 for smaller to medium-sized datasets. It also allows easy extraction of
 particular values, unlike histograms, which pool data into bins and
