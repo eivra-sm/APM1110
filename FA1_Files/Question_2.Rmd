@@ -1,5 +1,6 @@
 ---
 title: "Stem-and-Leaf  and Box-plot Diagram"
+author: "MERCADO, C & SINOCRUZ, A"
 output: pdf_document
 date: "2025-02-01"
 ---
