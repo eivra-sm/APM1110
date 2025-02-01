@@ -1,7 +1,10 @@
 # SEC 1-FA1 GROUP 3-MERCADO, C; SINOCRUZ, A-FA1
 Author: 
+
 Mercado, Consuelo B.
+
 Sinocruz, Arvie M.
+
 Date: 2025-01-31
 
 # Question #2
