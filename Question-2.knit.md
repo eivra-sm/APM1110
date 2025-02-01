@@ -85,7 +85,8 @@ However, in arch2, the exact skewness is positive while the other is
 negative. Also in the fourth subject, prog2, there is a big difference
 in their skewness. This indicates that the accuracy of Pearson
 Approximation varies depending on the data.
-# Question #2
+
+# Question 2
 
 For the class of 50 students of computing detailed in Exercise 1.1, use R to
 
