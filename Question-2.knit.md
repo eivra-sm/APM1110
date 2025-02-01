@@ -177,7 +177,7 @@ The comparative analysis of scores for the Java programming examination among fe
 
 Overall, the analysis shows that female students performed better than their counterparts generally because they have a higher median score and their scores diverge more widely. Male students were more consistent in their performance as their scores fluctuate less. The presence of an outlier among male students suggests that although most of them scored lower than the females, some of them scored much higher than that. In addition, the minimum around 30 by males means a percentage of students male students underperformed women students. A general finding suggests that female students tend to produce better overall success, but if there is much variation, excellent potential is realized in male students.
 
-**Reference:**
+**References:**
 
 Green, J. L., Manski, S. E., Hansen, T. A., & Broatch, J. E. (2023,
 January 1). *Descriptive statistics* (R. J. Tierney, F. Rizvi, & K.
