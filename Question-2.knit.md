@@ -1,9 +1,4 @@
----
-output:
-  pdf_document: default
-  html_document: default
----
-#FA1
+# FA1
 ================
 Mercado, Consuelo B.
 Sinocruz, Arvie M.
