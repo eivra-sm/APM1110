@@ -2,11 +2,15 @@
 title: "SEC 1-FA 1 Group 3 - Mercado, C; Sinocruz, A - FA1"
 author: "MERCADO, C & SINOCRUZ, A"
 date: "2025-02-01"
+
 output: pdf_document
 editor_options: 
   markdown: 
     wrap: 72
 ---
+
+github link:
+<https://github.com/eivra-sm/APM1110/blob/88ae989a33908f166a40c823fd4493716564bc1b/SEC%201-FA%201%20Group%203%20-%20MERCADO%2C%20C%3B%20SINOCRUZ%2C%20A%20-%20FA1.Rmd>
 
 # Question 1
 
@@ -114,13 +118,11 @@ male_scores <-c(48, 49, 49, 30, 30, 31, 32, 35, 37, 41, 86, 42, 51, 53, 56, 42, 
 cat("\n Stem-and-Leaf display for Male students:\n")
 ```
 
-
 ```{r}
 stem(male_scores)
 ```
 
-
-Figure 1: Stem-and-Leaf Display for Male Students
+***Figure 1:** Stem-and-Leaf Display for Male Students*
 
 ### Stem-and-Leaf Display fo Females
 
@@ -130,13 +132,11 @@ female_scores <- c(57, 59, 78, 79, 60, 65, 68, 71, 75, 48, 51, 55, 56, 41, 43, 4
 cat("\n Stem-and-Leaf display for Female students:\n")
 ```
 
-
 ```{r}
 stem(female_scores)
 ```
 
-
-Figure 2: Stem-and-Leaf Display for Female Students
+***Figure 2**: Stem-and-Leaf Display for Female Students*
 
 ### Stem-and-Leaf plot vs. Histogram
 
@@ -188,8 +188,8 @@ boxplot(female_scores, male_scores,
         names = c("Female","Male"))
 ```
 
-Figure 3: Box Diagram of Student Scores in the Java Programming
-Examination
+***Figure 3:** Box Diagram of Student Scores in the Java Programming
+Examination*
 
 The comparative analysis of scores for the Java programming examination
 among female and male students is shown by the boxplot. The median score
@@ -219,9 +219,7 @@ that female students tend to produce better overall success, but if
 there is much variation, excellent potential is realized in male
 students.
 
-
-
-**Reference:**
+### **Reference:**
 
 Green, J. L., Manski, S. E., Hansen, T. A., & Broatch, J. E. (2023,
 January 1). *Descriptive statistics* (R. J. Tierney, F. Rizvi, & K.
