@@ -135,7 +135,7 @@ cat("\n Stem-and-Leaf display for Female students:\n")
 stem(female_scores)
 ```
 
-**Figure 2**: *Stem-and-Leaf Display for Female Students*
+**Figure 2:** *Stem-and-Leaf Display for Female Students*
 
 ### Stem-and-Leaf plot vs. Histogram
 
