@@ -37,6 +37,15 @@ library(readr)
 library(moments)
 df <- read_csv("C:\\Users\\CONSUELO B. MERCADO\\OneDrive\\Documents\\r fas\\results.csv")
 ```
+## Rows: 93 Columns: 5
+## -- Column specification --------------------------------------------------------
+## Delimiter: ","
+## chr (1): gender
+## dbl (4): arch1, prog1, arch2, prog2
+##
+## i Use ‘spec()‘ to retrieve the full column specification for this data.
+## i Specify the column types or set ‘show_col_types = FALSE‘ to quiet this message.
+
 
 ### We need to specify the file path for this. And then type
 
