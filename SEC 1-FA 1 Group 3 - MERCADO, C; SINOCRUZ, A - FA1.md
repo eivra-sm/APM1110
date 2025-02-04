@@ -37,16 +37,14 @@ library(readr)
 library(moments)
 df <- read_csv("C:\\Users\\CONSUELO B. MERCADO\\OneDrive\\Documents\\r fas\\results.csv")
 ```
-```
-## Rows: 93 Columns: 5
-## -- Column specification --------------------------------------------------------
-## Delimiter: ","
-## chr (1): gender
-## dbl (4): arch1, prog1, arch2, prog2
-##
-## i Use ‘spec()‘ to retrieve the full column specification for this data.
-## i Specify the column types or set ‘show_col_types = FALSE‘ to quiet this message.
-```
+    ## Rows: 93 Columns: 5
+    ## -- Column specification --------------------------------------------------------
+    ## Delimiter: ","
+    ## chr (1): gender
+    ## dbl (4): arch1, prog1, arch2, prog2
+    ##
+    ## i Use ‘spec()‘ to retrieve the full column specification for this data.
+    ## i Specify the column types or set ‘show_col_types = FALSE‘ to quiet this message.
 
 ### We need to specify the file path for this. And then type
 
@@ -58,20 +56,22 @@ library(moments)
 
 ``` r
 sapply(df[2:5], mean, na.rm = TRUE)
-
+```
     ##     arch1 prog1 arch2 prog2
     ## 68.61111 64.50549 39.40217 41.78409
 
+``` r
 sapply(df[2:5], median, na.rm = TRUE)
-
+```
     ## arch1 prog1 arch2 prog2
     ##   74.5 68.0 41.5 50.5
 
+``` r
 sapply(df[2:5], sd, na.rm = TRUE)
-
+```
     ##     arch1 prog1 arch2 prog2
     ## 23.00742 21.73240 24.10009 28.18268
-```
+
 
 ### From the moments package, we use the skewness function to calculate the exact skewness.
 
@@ -83,10 +83,10 @@ df_numeric <- df[, numeric_columns]
 exact_skewness <- sapply(df_numeric, skewness, na.rm = TRUE)
 exact_skewness
 ```
-```
-##     arch1     prog1     arch2     prog2
-##  -0.7788194 -0.6073172 0.3294140 -0.1683422
-```
+
+    ##     arch1     prog1     arch2     prog2
+    ##  -0.7788194 -0.6073172 0.3294140 -0.1683422
+
 ### Next, let's compute for the Pearson Skewness.
 
 ``` r
@@ -94,10 +94,9 @@ pearson_skewness <- sapply(df_numeric, function(x) {(3 * (mean(x, na.rm = TRUE) 
 median(x, na.rm = TRUE))) / sd(x, na.rm = TRUE)})
 pearson_skewness
 ```
-```
-##      arch1     prog1     arch2     prog2
-## -0.7678682 -0.4823911 -0.2611392 -0.9277944
-```
+    ##      arch1     prog1     arch2     prog2
+    ## -0.7678682 -0.4823911 -0.2611392 -0.9277944
+    
 ### To see the comparison of the two, let's combine them using data frame.
 
 ``` r
@@ -105,14 +104,12 @@ skewness_results <- data.frame(Subject = numeric_columns, Exact_Skewness =
 exact_skewness, Pearson_Skewness = pearson_skewness)
 skewness_results
 ```
-```
-##       Subject  Exact_Skewness  Pearson_Skewness
-## arch1 arch1     -0.7788194     -0.7678682
-## prog1 prog1     -0.6073172     -0.4823911
-## arch2 arch2      0.3294140     -0.2611392
-## prog2 prog2     -0.1683422     -0.9277944
-```
-
+    ##       Subject  Exact_Skewness  Pearson_Skewness
+    ## arch1 arch1     -0.7788194     -0.7678682
+    ## prog1 prog1     -0.6073172     -0.4823911
+    ## arch2 arch2      0.3294140     -0.2611392
+    ## prog2 prog2     -0.1683422     -0.9277944
+    
 ### Analysis
 
 According to the research (Green et al., 2023), skewness is used to
@@ -149,24 +146,20 @@ male_scores <-c(48, 49, 49, 30, 30, 31, 32, 35, 37, 41, 86, 42, 51, 53, 56, 42, 
                  50, 51, 65, 67, 51, 56, 58, 64, 64, 75)
 cat("\n Stem-and-Leaf display for Male students:\n")
 ```
-```
-##
-## Stem-and-Leaf display for Male students:
-```
+    ##
+    ## Stem-and-Leaf display for Male students:
 ``` r
 stem(male_scores)
 ```
-```
-##
-##   The decimal point is 1 digit(s) to the right of the |
-##
-##   3 | 001257
-##   4 | 1224899
-##   5 | 01113668
-##   6 | 4457
-##   7 | 5
-##   8 | 6
-```
+    ## 
+    ##   The decimal point is 1 digit(s) to the right of the |
+    ## 
+    ##   3 | 001257
+    ##   4 | 1224899
+    ##   5 | 01113668
+    ##   6 | 4457
+    ##   7 | 5
+    ##   8 | 6
 **Figure 1:** *Stem-and-Leaf Display for Male Students*
 
 ### Stem-and-Leaf Display fo Females
@@ -242,6 +235,7 @@ boxplot(female_scores, male_scores,
         ylab = "Exam Scores", col = c("pink", "lightblue"),
         names = c("Female","Male"))
 ```
+![](images/boxplot.png)
 
 **Figure 3:** *Box Diagram of Student Scores in the Java Programming
 Examination*
