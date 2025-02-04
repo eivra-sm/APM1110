@@ -92,7 +92,7 @@ scores based on the data given in Exercise 1.1.
 
 ```{r, echo=FALSE, fig.align="center"}
 boxplot(female_scores, male_scores,
-        main = "Comparison of Scores in Programming Exam",
+        main = "Comparison of Scores in Java Programming Exam",
         xlab = "Gender", 
         ylab = "Exam Scores", col = c("pink", "lightblue"),
         names = c("Female","Male"))
