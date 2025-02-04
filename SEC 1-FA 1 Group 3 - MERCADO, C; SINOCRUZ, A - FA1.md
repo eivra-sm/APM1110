@@ -1,16 +1,18 @@
----
-title: "Formative Assessment 1"
-author: "MERCADO, C & SINOCRUZ, A"
-date: "2025-02-01"
 
-output: pdf_document
-editor_options: 
-  markdown: 
-    wrap: 72
----
+# Formative Assessment 1
+Authors: 
+
+MERCADO, CONSUELO B.
+
+SINOCRUZ, ARVIE M. 
+
+2025-02-01
+
+__
 
 **github link:**
 <https://github.com/eivra-sm/APM1110/blob/main/SEC%201-FA%201%20Group%203%20-%20MERCADO,%20C;%20SINOCRUZ,%20A%20-%20FA1.Rmd>
+_
 
 # Question 1
 
