@@ -1,15 +1,15 @@
+---
+title: "Formative Assessment 1"
+author: "MERCADO, C & SINOCRUZ, A"
+date: "2025-02-01"
 
-# Formative Assessment 1
-Authors: 
+output: pdf_document
+editor_options: 
+  markdown: 
+    wrap: 72
+---
 
-MERCADO, CONSUELO
-
-SINOCRUZ, ARVIE
-
-2025-02-01
-____
-
-**github link:** 
+**github link:**
 <https://github.com/eivra-sm/APM1110/blob/main/SEC%201-FA%201%20Group%203%20-%20MERCADO,%20C;%20SINOCRUZ,%20A%20-%20FA1.Rmd>
 
 # Question 1
@@ -24,39 +24,37 @@ to calculate than the exact formula given in Equation 2.1.
 $$\text{Skewness} \approx \frac{3(\text{Mean} - \text{Median})}{\text{Standard Deviation}}$$
 
 Write a program to calculate this and apply it to the data in
-results.txt (results.csv). Is it a reasonable approximation? 
+results.txt (results.csv). Is it a reasonable approximation???
 
 ## STEPS:
 
 ### Load the necessary libraries and data
 
-```{r}
+``` r
 library(readr)
 library(moments)
 df <- read_csv("C:\\Users\\CONSUELO B. MERCADO\\OneDrive\\Documents\\r fas\\results.csv")
-
 ```
 
 ### We need to specify the file path for this. And then type
 
-```{r}
+``` r
 library(moments)
 ```
 
 ### This is a required package for the skewness function that we will use for the exact skewness part.Next, we calculated the mean, median, and standard deviation excluding the gender column and the NA values. These are the needed values for Pearson's approximation
 
-```{r}
+``` r
 sapply(df[2:5], mean, na.rm = TRUE)    
 
 sapply(df[2:5], median, na.rm = TRUE) 
 
 sapply(df[2:5], sd, na.rm = TRUE)
-
 ```
 
 ### From the moments package, we use the skewness function to calculate the exact skewness.
 
-```{r}
+``` r
 numeric_columns <- c("arch1", "prog1", "arch2", "prog2") 
 
 df_numeric <- df[, numeric_columns] 
@@ -67,7 +65,7 @@ exact_skewness
 
 ### Next, let's compute for the Pearson Skewness.
 
-```{r}
+``` r
 pearson_skewness <- sapply(df_numeric, function(x) {(3 * (mean(x, na.rm = TRUE) - 
 median(x, na.rm = TRUE))) / sd(x, na.rm = TRUE)})
 pearson_skewness
@@ -75,7 +73,7 @@ pearson_skewness
 
 ### To see the comparison of the two, let's combine them using data frame.
 
-```{r}
+``` r
 skewness_results <- data.frame(Subject = numeric_columns, Exact_Skewness = 
 exact_skewness, Pearson_Skewness = pearson_skewness)
 skewness_results
@@ -112,13 +110,13 @@ and female scores based on the data given in Exercise 1.1.
 
 ### Stem-and-Leaf Display for Males
 
-```{r}
+``` r
 male_scores <-c(48, 49, 49, 30, 30, 31, 32, 35, 37, 41, 86, 42, 51, 53, 56, 42, 44,
                  50, 51, 65, 67, 51, 56, 58, 64, 64, 75)
 cat("\n Stem-and-Leaf display for Male students:\n")
 ```
 
-```{r}
+``` r
 stem(male_scores)
 ```
 
@@ -126,13 +124,13 @@ stem(male_scores)
 
 ### Stem-and-Leaf Display fo Females
 
-```{r}
+``` r
 female_scores <- c(57, 59, 78, 79, 60, 65, 68, 71, 75, 48, 51, 55, 56, 41, 43, 44, 
                    75, 78, 80, 81, 83, 83, 85)
 cat("\n Stem-and-Leaf display for Female students:\n")
 ```
 
-```{r}
+``` r
 stem(female_scores)
 ```
 
@@ -163,7 +161,7 @@ to attain these high scores, especially in the mid-to-high 70s and
 low-to-mid 80s. This shows that a large proportion of the students
 performed well in the Java Programming Examination. These facts may not
 be as clear in a histogram. Moreover, another significant advantage is
-its comparative analysis—back-to-back stem-and-leaf plots have the
+its comparative analysis---back-to-back stem-and-leaf plots have the
 ability to show two datasets side by side, making comparison simple and
 easy to interpret. For very large datasets, however, stem-and-leaf plots
 might get cluttered; hence, histograms are better for describing and
@@ -180,14 +178,14 @@ datasets.
 In this section, we will construct the box-plot for male and female
 scores based on the data given in Exercise 1.1.
 
-```{r, echo=FALSE, fig.align="center"}
+``` r
 boxplot(female_scores, male_scores,
         main = "Comparison of Scores in Programming Exam",
         xlab = "Gender", 
         ylab = "Exam Scores", col = c("pink", "lightblue"),
         names = c("Female","Male"))
 ```
-![]boxplot.png
+
 **Figure 3:** *Box Diagram of Student Scores in the Java Programming
 Examination*
 
@@ -225,7 +223,6 @@ Green, J. L., Manski, S. E., Hansen, T. A., & Broatch, J. E. (2023,
 January 1). *Descriptive statistics* (R. J. Tierney, F. Rizvi, & K.
 Ercikan, Eds.). ScienceDirect; Elsevier.
 <https://www.sciencedirect.com/science/article/abs/pii/B9780128186305100831>
-
 
 Pallavi. (2021b, November 18). *Stem and leaf plot*. Helping With Math.
 <https://helpingwithmath.com/stem-and-leaf-plot/>
