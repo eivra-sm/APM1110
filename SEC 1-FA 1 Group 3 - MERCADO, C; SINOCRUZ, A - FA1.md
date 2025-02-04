@@ -1,6 +1,7 @@
 
 # Formative Assessment 1
 Authors: 
+
 MERCADO, CONSUELO
 
 SINOCRUZ, ARVIE
@@ -186,7 +187,7 @@ boxplot(female_scores, male_scores,
         ylab = "Exam Scores", col = c("pink", "lightblue"),
         names = c("Female","Male"))
 ```
-
+![]boxplot.png
 **Figure 3:** *Box Diagram of Student Scores in the Java Programming
 Examination*
 
