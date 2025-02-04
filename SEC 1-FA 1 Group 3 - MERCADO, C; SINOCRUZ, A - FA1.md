@@ -235,7 +235,7 @@ boxplot(female_scores, male_scores,
         ylab = "Exam Scores", col = c("pink", "lightblue"),
         names = c("Female","Male"))
 ```
-![](images/boxplot.png)
+![](FA1_Files/boxplot.png)
 
 **Figure 3:** *Box Diagram of Student Scores in the Java Programming
 Examination*
