@@ -1,6 +1,6 @@
 # Formative Assessment 2
 
-# Question 3
+## Question 3
 
 An experiment consists of rolling a die. Use R to simulate this experiment 600 times and obtain the relative frequency of each possible outcome. Hence, estimate the probability of getting each of 1, 2, 3, 4, 5, and 6.
 ___
