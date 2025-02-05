@@ -1,11 +1,12 @@
 # Formative Assessment 2
-___
 
 # Question 3
+___
 
 An experiment consists of rolling a die. Use R to simulate this experiment 600 times and obtain the relative frequency of each possible outcome. Hence, estimate the probability of getting each of 1, 2, 3, 4, 5, and 6.
 
 ### Step 1: Simulating 600 rolls of a die
+
 ```r
 set.seed(123)
 ```
@@ -49,6 +50,7 @@ legend("topright",
 
 ```
 ![](FA2_Files/barplot.png)
+
 **Figure 1:** *Relative Frequency Distribution of Die Rolls Over 600 Trials*
 
 Figure 1 shows the relative frequency of each six-sided die after 600 rolls. The relative frequencies are compared to the expected probability for each outcome, shown as the red dashed line at $1/6$ or approximately about 0.1667. The observed frequencies of each face change slightly. There are slight positive values for the die faces 1, 2, and 6 and a slight negative value for die faces 3, 4, and 5. In the finite sample size, these minor deviations are within expectations for random fluctuation.
