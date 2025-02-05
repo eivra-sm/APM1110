@@ -6,25 +6,25 @@ ___
 An experiment consists of rolling a die. Use R to simulate this experiment 600 times and obtain the relative frequency of each possible outcome. Hence, estimate the probability of getting each of 1, 2, 3, 4, 5, and 6.
 
 ### Step 1: Simulating 600 rolls of a die
-```{r}
+```r
 set.seed(123)
 ```
-```{r}
+```r
 die_rolls <- sample(1:6, size = 600, replace = TRUE)  
 ```
 
 ### Step 2: Calculating the relative frequency for each outcome
-```{r}
+```r
 relative_frequency <- table(die_rolls) / 600
 ```
 
 ### Print the relative frequencies
-```{r}
+```r
 print(relative_frequency)
 ```
 
 ### Step 3: Visualizing the relative frequencies with a bar plot
-```{r}
+```r
 par(mar = c(5, 5, 4, 4))
 
 # Creating the barplot
