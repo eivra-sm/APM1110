@@ -26,7 +26,7 @@ Use R to illustrate the probability of getting:
 
 *First, we need to simulate coin tosses.*
 
-```r
+```{r}
 set.seed(123)
 n <- 10000  # for the number of trials
 coin_tosses <- sample(c("H", "T"), size = n, replace = TRUE, prob = c(0.5, 0.5))
@@ -34,60 +34,63 @@ coin_tosses <- sample(c("H", "T"), size = n, replace = TRUE, prob = c(0.5, 0.5))
 
 *Then, compute for the probability of getting a head.*
 
-```r
+```{r}
 p_head <- sum(coin_tosses == "H") / n
 p_head
 ```
-
+    ## [1] 0.4943
 *So, the proportion is 0.4923 or approximately 0.5.*
 
 ### B. A red card is 0.5 if cards are drawn repeatedly with replacement from an awell-shuffled deck.
 
 *First, let's simulate again. In a standard deck of cards, there are 26 black cards and 26 red cards.*
 
-```r
-
+```{r}
 deck <- c(rep("Red", 26), rep("Black", 26)) 
 draws <- sample(deck, size = n, replace = TRUE)
 ```
 
 *Then let's compute for the probability.*
 
-```r
+```{r}
 p_red <- sum(draws == "Red") / n
 p_red
 ```
-
+    ## [1] 0.4969
 *So, the proportion is 0.4996 or approximately 0.5.*
 
 ### C. An even number is 0.5 if a fair die is rolled repeatedly.
 
 *Like what we did in the first two, let's simulate a die roll*
 
-```r
+```{r}
 die_roll <- sample(1:6, size = n, replace = TRUE)
 ```
 
 *Then let's calculate the probability.*
 
-```r
+```{r}
 p_even <- sum(die_roll %% 2 == 0) / n
 p_even
 ```
-
+    ## [1] 0.4943
 *So, the proportion is 0.4969 or approximately 0.5.*
 
 ### Summary
 
-```r
+```{r}
 sumtbl <- data.frame(
   Event = c("Coin Toss (Head)", "Drawing a Red Card", "Rolling an Even Number"),
   Theoretical_Probability = c(0.5, 0.5, 0.5),
   Simulated_Probability = c(p_head, p_red, p_even)
 )
+```
 sumtbl
 
-```
+    ##                         Event Theoretical_Probability Simulated_Probability
+    ##  1       Coin Toss (Head)                    0.5                     0.4943
+    ##  2   Drawing  a  Red Card                    0.5                     0.4969
+    ##  3 Rolling an Even Number                    0.5                     0.4969
 
 *From there, we can see that all the simulated probability is very close to 0.5.*
 ____
@@ -115,6 +118,10 @@ relative_frequency <- table(die_rolls) / 600
 ```r
 print(relative_frequency)
 ```
+
+    ## die_rolls
+    ##         1           2          3          4          5          6
+    ## 0.1766667  0.17000000  0.1600000  0.1533333  0.1666667  0.1733333
 
 ### Step 3: Visualizing the relative frequencies with a bar plot
 ```r
