@@ -12,7 +12,7 @@ ___
 
 **Github Link:** 
 ___
-#Quesstion #1
+# Quesstion #1
 
 ## 1. Use R to illustrate the probability of getting:
 
