@@ -14,10 +14,12 @@ ___
 ___
 # Quesstion #1
 
-## 1. Use R to illustrate the probability of getting:
+Use R to illustrate the probability of getting:
 
 (a) a head is 0.5 if a fair coin is tossed repeatedly;
+
 (b) a red card is 0.5 if cards are drawn repeatedly with replacement from an awell-shuffled deck;
+
 (c) an even number is 0.5 if a fair die is rolled repeatedly.
 
 ### A. A head is 0.5 if a fair coin is tossed repeatedly.
