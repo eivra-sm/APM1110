@@ -84,9 +84,8 @@ sumtbl <- data.frame(
   Theoretical_Probability = c(0.5, 0.5, 0.5),
   Simulated_Probability = c(p_head, p_red, p_even)
 )
-```
 sumtbl
-
+```
     ##                         Event Theoretical_Probability Simulated_Probability
     ##  1       Coin Toss (Head)                    0.5                     0.4943
     ##  2   Drawing  a  Red Card                    0.5                     0.4969
