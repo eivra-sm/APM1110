@@ -39,7 +39,7 @@ p_head <- sum(coin_tosses == "H") / n
 p_head
 ```
     ## [1] 0.4943
-*So, the proportion is 0.4923 or approximately 0.5.*
+*So, the proportion is 0.4943 or approximately 0.5.*
 
 ### B. A red card is 0.5 if cards are drawn repeatedly with replacement from an awell-shuffled deck.
 
@@ -57,7 +57,7 @@ p_red <- sum(draws == "Red") / n
 p_red
 ```
     ## [1] 0.4969
-*So, the proportion is 0.4996 or approximately 0.5.*
+*So, the proportion is 0.4969 or approximately 0.5.*
 
 ### C. An even number is 0.5 if a fair die is rolled repeatedly.
 
