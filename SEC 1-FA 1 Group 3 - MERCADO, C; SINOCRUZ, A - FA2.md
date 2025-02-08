@@ -86,10 +86,10 @@ sumtbl <- data.frame(
 )
 sumtbl
 ```
-    ##                         Event Theoretical_Probability Simulated_Probability
-    ##  1       Coin Toss (Head)                    0.5                     0.4943
-    ##  2   Drawing  a  Red Card                    0.5                     0.4969
-    ##  3 Rolling an Even Number                    0.5                     0.4969
+    ##                     Event Theoretical_Probability Simulated_Probability
+    ##  1       Coin Toss (Head)                     0.5                0.4943
+    ##  2   Drawing  a  Red Card                     0.5                0.4969
+    ##  3 Rolling an Even Number                     0.5                0.4969
 
 *From there, we can see that all the simulated probability is very close to 0.5.*
 ____
@@ -113,7 +113,7 @@ die_rolls <- sample(1:6, size = 600, replace = TRUE)
 relative_frequency <- table(die_rolls) / 600
 ```
 
-### Printing the relative frequencies
+### *Printing the relative frequencies*
 ```r
 print(relative_frequency)
 ```
