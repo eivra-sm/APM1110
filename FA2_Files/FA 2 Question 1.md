@@ -1,0 +1,76 @@
+# Formative Assessment 2
+
+# 1. Use R to illustrate the probability of getting:
+
+(a) a head is 0.5 if a fair coin is tossed repeatedly;
+(b) a red card is 0.5 if cards are drawn repeatedly with replacement from an awell-shuffled deck;
+(c) an even number is 0.5 if a fair die is rolled repeatedly.
+
+## A. A head is 0.5 if a fair coin is tossed repeatedly.
+
+*First, we need to simulate coin tosses.*
+
+```r
+set.seed(123)
+n <- 10000  # for the number of trials
+coin_tosses <- sample(c("H", "T"), size = n, replace = TRUE, prob = c(0.5, 0.5))
+```
+
+*Then, compute for the probability of getting a head.*
+
+```r
+p_head <- sum(coin_tosses == "H") / n
+p_head
+```
+
+*So, the proportion is 0.4943 or approximately 0.5.*
+
+## B. A red card is 0.5 if cards are drawn repeatedly with replacement from an awell-shuffled deck.
+
+*First, let's simulate again. In a standard deck of cards, there are 26 black cards and 26 red cards.*
+
+```r
+
+deck <- c(rep("Red", 26), rep("Black", 26)) 
+draws <- sample(deck, size = n, replace = TRUE)
+```
+
+*Then let's compute for the probability.*
+
+```r
+p_red <- sum(draws == "Red") / n
+p_red
+```
+
+*So, the proportion is 0.4969 or approximately 0.5.*
+
+## C. An even number is 0.5 if a fair die is rolled repeatedly.
+
+*Like what we did in the first two, let's simulate a die roll*
+
+```r
+die_roll <- sample(1:6, size = n, replace = TRUE)
+```
+
+*Then let's calculate the probability.*
+
+```r
+p_even <- sum(die_roll %% 2 == 0) / n
+p_even
+```
+
+*So, the proportion is 0.4969 or approximately 0.5.*
+
+## Summary
+
+```r
+sumtbl <- data.frame(
+  Event = c("Coin Toss (Head)", "Drawing a Red Card", "Rolling an Even Number"),
+  Theoretical_Probability = c(0.5, 0.5, 0.5),
+  Simulated_Probability = c(p_head, p_red, p_even)
+)
+sumtbl
+
+```
+
+*From there, we can see that all the simulated probability is very close to 0.5.*
