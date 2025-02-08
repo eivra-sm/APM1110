@@ -10,7 +10,7 @@ SINOCRUZ, ARVIE
 2025-02-07
 ___
 
-**Github Link:** <https://github.com/eivra-sm/APM1110/blob/main/SEC%201-FA%201%20Group%203%20-%20MERCADO,%20C;%20SINOCRUZ,%20A%20-%20FA2.md>
+**Github Link:** <https://github.com/eivra-sm/APM1110/blob/main/SEC%201-FA%202%20Group%203%20-%20MERCADO%2C%20C%3B%20SINOCRUZ%2C%20A%20-%20FA2.md>
 ___
 # Quesstion #1
 
