@@ -26,7 +26,7 @@ Use R to illustrate the probability of getting:
 
 *First, we need to simulate coin tosses.*
 
-```{r}
+```r
 set.seed(123)
 n <- 10000  # for the number of trials
 coin_tosses <- sample(c("H", "T"), size = n, replace = TRUE, prob = c(0.5, 0.5))
@@ -34,7 +34,7 @@ coin_tosses <- sample(c("H", "T"), size = n, replace = TRUE, prob = c(0.5, 0.5))
 
 *Then, compute for the probability of getting a head.*
 
-```{r}
+```r
 p_head <- sum(coin_tosses == "H") / n
 p_head
 ```
@@ -45,14 +45,14 @@ p_head
 
 *First, let's simulate again. In a standard deck of cards, there are 26 black cards and 26 red cards.*
 
-```{r}
+```r
 deck <- c(rep("Red", 26), rep("Black", 26)) 
 draws <- sample(deck, size = n, replace = TRUE)
 ```
 
 *Then let's compute for the probability.*
 
-```{r}
+```r
 p_red <- sum(draws == "Red") / n
 p_red
 ```
@@ -63,13 +63,13 @@ p_red
 
 *Like what we did in the first two, let's simulate a die roll*
 
-```{r}
+```r
 die_roll <- sample(1:6, size = n, replace = TRUE)
 ```
 
 *Then let's calculate the probability.*
 
-```{r}
+```r
 p_even <- sum(die_roll %% 2 == 0) / n
 p_even
 ```
@@ -78,7 +78,7 @@ p_even
 
 ### Summary
 
-```{r}
+```r
 sumtbl <- data.frame(
   Event = c("Coin Toss (Head)", "Drawing a Red Card", "Rolling an Even Number"),
   Theoretical_Probability = c(0.5, 0.5, 0.5),
