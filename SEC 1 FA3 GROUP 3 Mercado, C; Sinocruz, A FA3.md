@@ -52,7 +52,7 @@ prob_1_received_0
 received <- (prob_1_received_0 * message_transmitted_0) + (prob_received_1 * message_transmitted_1)
 ```
 
-### Output
+### Output:
 
 received
 
@@ -66,7 +66,7 @@ received
 transmitted <- (prob_received_1 * message_transmitted_1)/ received
 ```
 
-### Output
+### Output:
 
 transmitted
 
