@@ -4,6 +4,7 @@ author: "Mercado, C & Sinocruz, A"
 output: pdf_document
 ---
 
+Github link: https://github.com/eivra-sm/APM1110/blob/69617fe11c4adeb3167a6077cad687f262b3b3f2/SEC%201-%20FA3%20GROUP%203%20Mercado%2C%20C%3B%20Sinocruz%2C%20A%20FA3.md
 
 # Problem 1
 
