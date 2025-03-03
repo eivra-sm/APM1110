@@ -32,7 +32,7 @@ perc_relevant_img = c(50, 60, 80, 85)
 overall_percent <- sum(perc_img_supplied * perc_relevant_img) / 100
 ```
 
-### Printing the result
+### Printing the result or the answer
 
 ``` r
 print(paste("The overall percentage of relevant images is ", round(overall_percent, 2), "%"))
@@ -84,7 +84,7 @@ pairwise_indep <- c(
 mutual_indep <- Prob_E1_E2_E3 == Prob_E1 * Prob_E2 * Prob_E3
 ```
 
-### Printing the results
+### Printing the results or the answer
 
 ``` r
 cat("Pairwise Independent:", all(pairwise_indep), "\n")
