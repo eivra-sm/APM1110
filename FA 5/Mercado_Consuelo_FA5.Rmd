@@ -5,7 +5,7 @@ date: "2025-03-01"
 output: pdf_document
 ---
 
-*github link*: 
+*github link*: https://github.com/eivra-sm/APM1110/tree/56711b885b99bdf4b800739011607b6f32ad201b/FA%205
 
 # ITEM 6
 
