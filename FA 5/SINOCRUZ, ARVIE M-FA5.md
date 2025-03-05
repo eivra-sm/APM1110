@@ -1,11 +1,9 @@
----
-title: "Formative Assessment 5"
-author: "SINOCRUZ, ARVIE"
-date: "2025-03-04"
-output: pdf_document
-editor_options: 
-  markdown: 
-    wrap: 72
+Formative Assessment 5
+
+Author: SINOCRUZ, ARVIE
+
+Date:  2025-03-04
+
 ---
 
 # Question 6
@@ -28,7 +26,7 @@ table. Assume that the servers are independent.
     prob_perc_err <- c(0.01, 0.02, 0.015)
 ```
 
-(a) What is the probability of receiving an email containing an error?
+### (a) What is the probability of receiving an email containing an error?
 
 ```{r}
   prob_error <- sum(prob_perc_err * prob_perc_mess)
@@ -39,7 +37,7 @@ table. Assume that the servers are independent.
     ## [1] The probability of receiving an email containing an error is  0.01425
 
 
-(b) What is the probability that a message will arrive without error?
+### (b) What is the probability that a message will arrive without error?
 
 ``` {r}
   prob_perc_noerr <-  1 - prob_error
@@ -50,7 +48,7 @@ table. Assume that the servers are independent.
     ## [1] The probability of receiving an email without an error is  0.98575
 
 
-(c) If a message arrives without error, what is the probability that it
+### (c) If a message arrives without error, what is the probability that it
     was sent through server 1?
 
 ``` {r}
@@ -91,7 +89,7 @@ the undecided, and G the intention of upgrading the computer hardware.
   
 ```
 
-(a) Calculate the probability that a manager chosen at random will not upgrade the computer ardware (P(Gbar)).
+### (a) Calculate the probability that a manager chosen at random will not upgrade the computer ardware (P(Gbar)).
   
 ```{r}
   Prob_G <- (Prob_G_A * Prob_A) + (Prob_G_B * Prob_B) + (Prob_G_C * Prob_C)
@@ -99,10 +97,10 @@ the undecided, and G the intention of upgrading the computer hardware.
   cat("P(Ḡ): ", Prob_Gbar, "\n") # Printing the result
 ```
 
-    ## P(Ḡ):  0.68
+    ## [1] P(Ḡ):  0.68
 
 
-(b) Prob_A <- 0.20(b) Explain what is meant by the posterior probability of *B* given *G*,  P(B\|G) 
+### (b) Prob_A <- 0.20(b) Explain what is meant by the posterior probability of *B* given *G*,  P(B\|G) 
 
 Using Bayes’ Theorem:
 
@@ -111,9 +109,9 @@ Using Bayes’ Theorem:
  cat("P(B|G):", Prob_B_given_G, "\n") # Printing the result
 ```
 
-    ## P(B|G):  0.875
+    ## [1] P(B|G):  0.875
     
-(c)  Construct a tree diagram and use it to calculate the following probabilities: P(G), P(B\|G), P(B\|Gbar), P(C\|G), P(Cbar\|Gbar)
+### (c)  Construct a tree diagram and use it to calculate the following probabilities: P(G), P(B\|G), P(B\|Gbar), P(C\|G), P(Cbar\|Gbar)
 
 ```{r}
   # Computing P(B|Gbar)
@@ -137,35 +135,35 @@ Using Bayes’ Theorem:
   cat("P(G):", Prob_G, "\n")
 ```
 
-    ## P(G): 0.32
+    ## [1] P(G): 0.32
     
 ```{r}
   # Printing the results
   cat("P(B|G):", Prob_B_given_G, "\n")
 ```
 
-    ## P(B|G): 0.875 
+    ## [1] P(B|G): 0.875 
 
 ```{r}
   # Printing the results
   cat("P(B|Ḡ):", Prob_B_given_Gbar, "\n")
 ```
 
-    ## P(B|Ḡ): 0.6176471 
+    ## [1] P(B|Ḡ): 0.6176471 
 
 ```{r}
   # Printing the results
   cat("P(C|G):", Prob_C_given_G, "\n")
 ```
 
-    ## P(C|G): 0.0625 
+    ## [1] P(C|G): 0.0625 
 
 ```{r}
   # Printing the results
   cat("P(Cbar|Gbar):", Prob_Cbar_given_Gbar, "\n")
 ```
 
-    ## P(Cbar|Gbar): 0.8823529 
+    ## [1] P(Cbar|Gbar): 0.8823529 
     
 ## Tree Diagram
 
@@ -210,7 +208,7 @@ digraph DecisionTree {
 }
 ")
 ```
-
+![](tree diagram.png)
 
 # Question 13
 
@@ -236,7 +234,7 @@ Prob_infection <- (Prob_spywareI * Prob_not_detect_given_I) + (Prob_spywareE * P
 cat("The probability of infection:", Prob_infection, "\n")
 ```
 
-    ## The probability of infection: 0.34 
+    ## [1] The probability of infection: 0.34 
     
     
 ### (b) If the spyware is detected, what is the probability that it came through the Internet?
@@ -250,6 +248,6 @@ Prob_I_given_D <- (Prob_detect_given_I * Prob_spywareI) / Prob_detect
 
 cat("The probability that detected spyware came from the Internet:", Prob_I_given_D, "\n")
 ```
-    ##  The probability that detected spyware came from the Iinternet: 0.6363636
+    ##  [1] The probability that detected spyware came from the Iinternet: 0.6363636
 
 
