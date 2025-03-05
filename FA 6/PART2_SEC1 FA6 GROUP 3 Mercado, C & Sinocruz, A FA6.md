@@ -2,7 +2,7 @@
 
 Author: Mercado, C & Sinocruz, A
 
-Date: "2025-03-05"
+Date: 2025-03-05
 ---
 
 # II. Hypergeometric Distribution
