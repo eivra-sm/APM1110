@@ -14,10 +14,10 @@ messages that travel through each route are shown in the following
 table. Assume that the servers are independent.
 
       
-    <pre>               Percentage of Messages        Percentage of Errors
+                   Percentage of Messages        Percentage of Errors
     server 1                40                             1
     server 2                25                             2
-    server 3                35                            1.5</pre>
+    server 3                35                            1.5
 
 
 ``` {r}
@@ -208,7 +208,7 @@ digraph DecisionTree {
 }
 ")
 ```
-![](FA 5/SINOCRUZ_tree diagram.png)
+![](images/tree diagram.png)
 
 # Question 13
 
