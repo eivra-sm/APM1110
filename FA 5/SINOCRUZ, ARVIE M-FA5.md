@@ -208,7 +208,7 @@ digraph DecisionTree {
 }
 ")
 ```
-![](tree diagram.png)
+![](FA 5/SINOCRUZ_tree diagram.png)
 
 # Question 13
 
