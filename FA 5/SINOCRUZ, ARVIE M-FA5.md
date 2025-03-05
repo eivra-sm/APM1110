@@ -208,7 +208,7 @@ digraph DecisionTree {
 }
 ")
 ```
-![](FA5/tree diagram.png)
+![](FA 5/tree diagram.png)
 
 # Question 13
 
