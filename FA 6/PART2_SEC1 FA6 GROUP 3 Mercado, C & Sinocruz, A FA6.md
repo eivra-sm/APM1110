@@ -1,8 +1,6 @@
----
-title: "Formative Assessment 6"
-author: "Mercado, C & Sinocruz, A"
-date: "2025-03-05"
-output: pdf_document
+# Formative Assessment 6"
+Author: Mercado, C & Sinocruz, A
+Date: "2025-03-05"
 ---
 
 # II. Hypergeometric Distribution
