@@ -5,7 +5,7 @@ date: "2025-03-05"
 output: pdf_document
 ---
 
-**github link:**
+**github link:**https://github.com/eivra-sm/APM1110/blob/ed65a02fc9aa6477687aabf7b69c6abc3ffdd2c8/FA%206/SEC1%20FA6%20GROUP%203%20Mercado%2C%20C%20%26%20Sinocruz%2C%20A%20FA6.md
 
 # I. Geometric Distribution.
 
