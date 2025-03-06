@@ -7,6 +7,7 @@ Author: Mercado, C & Sinocruz, A
 ---
 
 # II. Hypergeometric Distribution
+
 Consider a plant manufacturing IC chips of which 10% are expected to be defective. The chips are packed in boxes for export. Before transportation, a sample is drawn from each box. Estimate the probability that the sample contains more than 10% defectives, when:
 
 ### A sample of 10 is selected from a box of 40
