@@ -3,7 +3,7 @@
 Author: "Mercado, C & Sinocruz, A
 
 Date: "2025-03-15"
-__
+
 
 # Problem 1
 
