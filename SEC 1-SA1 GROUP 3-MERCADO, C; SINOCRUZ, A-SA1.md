@@ -8,14 +8,10 @@ __
 # Problem 1
 
 A company has three factories producing a product. Factory 1 produces $x_1$ of the product, factory 2 produces $x_2$, and factory 3 produces $x_3$, where: 
-$$
-    \sum_{i=1}^{3} x_i = 1.
-$$
+$\sum_{i=1}^{3} x_i = 1$.
 
 The defective rates of the products are $y_1, y_2,$ and $y_3$ respectively, where: 
-$$
-    \sum_{i=1}^{3} y_i = 0.12.
-$$
+$\sum_{i=1}^{3} y_i = 0.12$.
 
 Write a program that takes user input for $x_i$ and $y_i$ and calculates the probability that a randomly selected product is defective.
 
@@ -126,10 +122,8 @@ server <- function(input, output) {
 # Run the App
 shinyApp(ui = ui, server = server)
 ```
-```
-
 # Problem 2
-
+```
 With your own computing experience, develop a front end to R that allows the user
 
 -   to input the values of a univariate discrete random variable and the associated probabilities to obtain the mean and variance, and
