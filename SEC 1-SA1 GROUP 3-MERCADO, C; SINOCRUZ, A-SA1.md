@@ -26,12 +26,12 @@ Write a program that takes user input for $x_i$ and $y_i$ and calculates the pro
 *Note that the "x" is the factory's production and "y" is the defect rates.*
 
 ## Code
-```{r}
+```r
 library(shiny)
 library(shinythemes)
 ```
 
-```{r}
+```r
 # Function to validate inputs
 validate_inputs <- function(x, y) {
     if (sum(x) != 1) {
@@ -147,12 +147,12 @@ Your program should provide a facility to calculate each distribution's mean and
 
 ## Code:
 
-```{r}
+```r
 library(shiny)
 library(bslib)
 ```
 
-```{r}
+```r
 # Design for the front end
 modern_theme <- bs_theme(
   version = 5,
@@ -367,7 +367,7 @@ By generating 10,000 searches in R, carry out a simulation experiment for a sear
 
 ## Code:
 
-```{r}
+```r
 library(ggplot2)
 
 
@@ -394,7 +394,7 @@ cat("Simulated Variance:", variance_simulated, "\n\n")
 
 ## Code
 
-```{r}
+```r
 # Plot the simulated probability density function (PDF)
 data_frame <- as.data.frame(table(searches) / trials)
 colnames(data_frame) <- c("Searches", "Probability")
@@ -406,9 +406,6 @@ ggplot(data_frame, aes(x = Searches, y = Probability)) +
   ggtitle("Simulated probability density function (PDF)") +
   xlab("# of searches to first cuccess") +
   ylab("Probability")
-
-![](SA 1/Hist_SA1.png)
-
 
 # Conditional Distribution when X > 3
 filtered_searches <- searches[searches > 3] - 3  
@@ -427,6 +424,8 @@ cat("Conditional Variance (X > 3):", var_conditional, "\n\n")
     ## Conditional Mean (X > 3): 1.643533 
     ## Conditional Variance (X > 3): 1.16499
 
+![](SA1/Hist_SA1.png)
+
 
 As test data, assume each site has a **60% chance** of containing the key phrase. To verify that the **Markov memoryless property** holds, we obtain estimates of:
 
@@ -436,7 +435,7 @@ As test data, assume each site has a **60% chance** of containing the key phrase
 
 ## Code
 
-```{r}
+```r
 cat("P(X = 4 | X > 3):", p_x4_given_x3, "\n")
 cat("P(X = 5 | X > 3):", p_x5_given_x3, "\n")
 cat("P(X = 1):", p_x1, "\n")
