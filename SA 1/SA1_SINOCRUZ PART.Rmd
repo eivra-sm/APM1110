@@ -19,9 +19,7 @@ validate_inputs <- function(x, y) {
   if (any(x < 0.10 | x > 0.40)) {
     return("Error: Each x value must be between 0.10 and 0.40.")
   }
-```
-  
-```{r}
+
   # Checking the constraints for y
   if (sum(y) != 0.12) {
     return("Error: The sum of y1, y2, and y3 must be 0.12.")
