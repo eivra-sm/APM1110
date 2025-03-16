@@ -10,60 +10,85 @@ output: pdf_document
 *Note that the "x" is the factory's production and "y" is the defect rates.*
 
 ```{r}
+install.packages("shiny")
+library(shiny)
+```
+install.packages("shiny", dependencies = TRUE)
+
+```{r}
 # Function to validate inputs
 validate_inputs <- function(x, y) {
-  # Check constraints for x
-  if (sum(x) != 1) {
-    return("Error: The sum of x1, x2, and x3 must be 1.")
-  }
-  if (any(x < 0.10 | x > 0.40)) {
-    return("Error: Each x value must be between 0.10 and 0.40.")
-  }
+    # Check constraints for x
+    if (sum(x) != 1) {
+        return("Error: The sum of x1, x2, and x3 must be 1.")
+    }
+    if (any(x < 0.10 | x > 0.40)) {
+        return("Error: Each x value must be between 0.10 and 0.40.")
+    }
 
-  # Checking the constraints for y
-  if (sum(y) != 0.12) {
-    return("Error: The sum of y1, y2, and y3 must be 0.12.")
-  }
-  if (any(y < 0.01 | y > 0.05)) {
-    return("Error: Each y value must be between 0.01 and 0.05.")
-  }
-  
-  return(TRUE)
-
+    # Checking the constraints for y
+    if (sum(y) != 0.12) {
+        return("Error: The sum of y1, y2, and y3 must be 0.12.")
+    }
+    if (any(y < 0.01 | y > 0.05)) {
+        return("Error: Each y value must be between 0.01 and 0.05.")
+    }
+    
+    return(TRUE)
 }
-```
 
-```{r}
 # Function to calculate probability of selecting a defective product
 compute_defective_probability <- function(x, y) {
-  probability_defective <- sum(x * y)
-  return(probability_defective)
+    probability_defective <- sum(x * y)
+    return(probability_defective)
 }
+
+# UI Layout
+ui <- fluidPage(
+    titlePanel("Defective Product Probability Calculator"),
+    
+    sidebarLayout(
+        sidebarPanel(
+            numericInput("x1", "x1 (Factory Production %)", value = 0.30, min = 0.10, max = 0.40, step = 0.01),
+            numericInput("x2", "x2 (Factory Production %)", value = 0.30, min = 0.10, max = 0.40, step = 0.01),
+            numericInput("x3", "x3 (Factory Production %)", value = 0.40, min = 0.10, max = 0.40, step = 0.01),
+            
+            numericInput("y1", "y1 (Defect Rate)", value = 0.04, min = 0.01, max = 0.05, step = 0.01),
+            numericInput("y2", "y2 (Defect Rate)", value = 0.05, min = 0.01, max = 0.05, step = 0.01),
+            numericInput("y3", "y3 (Defect Rate)", value = 0.03, min = 0.01, max = 0.05, step = 0.01),
+            
+            actionButton("compute", "Calculate Probability")
+        ),
+        
+        mainPanel(
+            verbatimTextOutput("result")
+        )
+    )
+)
+
+# Server Logic
+server <- function(input, output) {
+    observeEvent(input$compute, {
+        x <- c(input$x1, input$x2, input$x3)
+        y <- c(input$y1, input$y2, input$y3)
+        
+        validation_result <- validate_inputs(x, y)
+        
+        output$result <- renderText({
+            if (validation_result == TRUE) {
+                defective_prob <- compute_defective_probability(x, y)
+                sprintf("The probability of selecting a defective product is: %.4f", defective_prob)
+            } else {
+                validation_result  # Show error message
+            }
+        })
+    })  # Closing bracket for observeEvent()
+}  # Closing bracket for server function
 ```
 
 ```{r}
-# Taking user input
-cat("Enter values for x1, x2, and x3 (separated by space): ")
-x <- as.numeric(strsplit(readline(), " ")[[1]])
-
-cat("Enter values for y1, y2, and y3 (separated by space): ")
-y <- as.numeric(strsplit(readline(), " ")[[1]])
-```
-
-```{r}
-# Validate input
-validation_result <- validate_inputs(x, y)
-```
-
-```{r}
-if (validation_result == TRUE) {
-  # Compute probability
-  defective_prob <- compute_defective_probability(x, y)
-  cat(sprintf("The probability of selecting a defective product is: %.4f\n", defective_prob))
-} else {
-  # Print validation error
-  cat(validation_result, "\n")
-}
+# Run App
+shinyApp(ui = ui, server = server)
 ```
 
 # Question 3
@@ -85,7 +110,7 @@ attempts_searches <- rgeom(num_simulations, prob_success) + 1  # Geometric distr
 
 
 ```{r}
-# Ploting simulated pdf
+# Plotting simulated pdf
 hist(attempts_searches, probability = TRUE, breaks = max(attempts_searches), 
      main = "Simulated Probability Distribution of Searches",
      xlab = "Number of Searches", col = "purple")
