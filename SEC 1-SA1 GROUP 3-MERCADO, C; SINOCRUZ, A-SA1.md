@@ -357,7 +357,6 @@ server <- function(input, output) {
 }
 
 shinyApp(ui, server)
-
 ```
 
 # Problem 3
@@ -387,6 +386,9 @@ variance_simulated <- var(searches)
 cat("Simulated Mean:", sample_mean, "\n")
 cat("Simulated Variance:", variance_simulated, "\n\n")
 ```
+
+    ## Simulated Mean: 1.6612 
+    ## Simulated Variance: 1.104725
 
 -   Obtain the simulated conditional distribution of searches when three searches have been carried out without success. Calculate its mean and variance, and satisfy yourself that they are equivalent to the simulated distribution of the complete set.
 
@@ -419,12 +421,12 @@ p_x5_given_x3 <- mean(searches == 5) / mean(searches > 3)
 p_x1 <- mean(searches == 1)
 p_x2 <- mean(searches == 2)
 
-
-
 cat("Conditional Mean (X > 3):", mean_conditional, "\n")
 cat("Conditional Variance (X > 3):", var_conditional, "\n\n")
-
 ```
+    ## Conditional Mean (X > 3): 1.643533 
+    ## Conditional Variance (X > 3): 1.16499
+
 
 As test data, assume each site has a **60% chance** of containing the key phrase. To verify that the **Markov memoryless property** holds, we obtain estimates of:
 
@@ -439,6 +441,10 @@ cat("P(X = 4 | X > 3):", p_x4_given_x3, "\n")
 cat("P(X = 5 | X > 3):", p_x5_given_x3, "\n")
 cat("P(X = 1):", p_x1, "\n")
 cat("P(X = 2):", p_x2, "\n")
-
 ```
+
+    ## P(X = 4 | X > 3): 0.6182965 
+    ## P(X = 5 | X > 3): 0.2287066 
+    ## P(X = 1): 0.6045 
+    ## P(X = 2): 0.234 
 
