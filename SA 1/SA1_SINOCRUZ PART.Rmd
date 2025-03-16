@@ -13,7 +13,6 @@ output: pdf_document
 install.packages("shiny")
 library(shiny)
 ```
-install.packages("shiny", dependencies = TRUE)
 
 ```{r}
 # Function to validate inputs
