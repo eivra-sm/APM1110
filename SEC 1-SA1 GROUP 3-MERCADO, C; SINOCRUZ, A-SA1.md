@@ -4,14 +4,17 @@ Author: "Mercado, C & Sinocruz, A
 
 Date: "2025-03-15"
 
+**Github Link: <https://github.com/eivra-sm/APM1110/blob/main/SEC%201-SA1%20GROUP%203-MERCADO,%20C;%20SINOCRUZ,%20A-SA1.md>**
 
 # Problem 1
 
-A company has three factories producing a product. Factory 1 produces $x_1$ of the product, factory 2 produces $x_2$, and factory 3 produces $x_3$, where: 
-$\sum_{i=1}^{3} x_i = 1$.
+A company has three factories producing a product. Factory 1 produces $x_1$ of the product, factory 2 produces $x_2$, and factory 3 produces $x_3$, where: $$
+\sum_{i=1}^{3} x_i = 1.
+$$
 
-The defective rates of the products are $y_1, y_2,$ and $y_3$ respectively, where: 
-$\sum_{i=1}^{3} y_i = 0.12$.
+The defective rates of the products are $y_1, y_2,$ and $y_3$ respectively, where: $$
+\sum_{i=1}^{3} y_i = 0.12.
+$$
 
 Write a program that takes user input for $x_i$ and $y_i$ and calculates the probability that a randomly selected product is defective.
 
@@ -22,12 +25,11 @@ Write a program that takes user input for $x_i$ and $y_i$ and calculates the pro
 
 *Note that the "x" is the factory's production and "y" is the defect rates.*
 
-
+## Code
 ```{r}
 library(shiny)
 library(shinythemes)
 ```
-
 
 ```{r}
 # Function to validate inputs
@@ -56,14 +58,15 @@ compute_defective_probability <- function(x, y) {
 # UI Layout
 ui <- fluidPage(
     theme = shinytheme("cosmo"),
-    tags$head(
-        tags$style(HTML("@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@300;400;700&display=swap');
-            body { font-family: 'Poppins', 'Roboto', sans-serif; }
-            .well { background-color: #f8f9fa; padding: 15px; border-radius: 10px; }
-            h4 { font-weight: 600; }
-            .calculator-container { background-color: #e3f2fd; padding: 20px; border-radius: 15px; box-shadow: 2px 2px 10px rgba(0,0,0,0.1); }
-        "))
-    ),
+tags$head(
+  tags$style(HTML("
+        body { font-family: 'Poppins', 'Roboto', sans-serif; }
+        .well { background-color: #f8f9fa; padding: 15px; border-radius: 10px;}
+        h4 { font-weight: 600; }
+        .calculator-container { background-color: #e3f2fd; padding: 20px; 
+        border-radius: 15px; box-shadow: 2px 2px 10px rgba(0,0,0,0.1); }
+    "))
+),
     
     # Title Panel
     titlePanel(tags$h2("Defective Product Probability Calculator", 
@@ -74,56 +77,66 @@ ui <- fluidPage(
             sidebarPanel(
                 h4("Factory Production Percentages"),
                 div(class = "well",
-                    numericInput("x1", "x1 (Factory Production %)", value = 0.30, min = 0.10, max = 0.40, step = 0.01),
-                    numericInput("x2", "x2 (Factory Production %)", value = 0.30, min = 0.10, max = 0.40, step = 0.01),
-                    numericInput("x3", "x3 (Factory Production %)", value = 0.40, min = 0.10, max = 0.40, step = 0.01)
+                    numericInput("x1", "x1 (Factory Production %)", value = 0.30, 
+                                 min = 0.10, max = 0.40, step = 0.01),
+                    numericInput("x2", "x2 (Factory Production %)", value = 0.30, 
+                                 min = 0.10, max = 0.40, step = 0.01),
+                    numericInput("x3", "x3 (Factory Production %)", value = 0.40, 
+                                 min = 0.10, max = 0.40, step = 0.01)
                 ),
                 
                 h4("Defect Rates"),
                 div(class = "well",
-                    numericInput("y1", "y1 (Defect Rate)", value = 0.04, min = 0.01, max = 0.05, step = 0.01),
-                    numericInput("y2", "y2 (Defect Rate)", value = 0.05, min = 0.01, max = 0.05, step = 0.01),
-                    numericInput("y3", "y3 (Defect Rate)", value = 0.03, min = 0.01, max = 0.05, step = 0.01)
+                    numericInput("y1", "y1 (Defect Rate)", value = 0.04, min = 0.01, 
+                                 max = 0.05, step = 0.01),
+                    numericInput("y2", "y2 (Defect Rate)", value = 0.05, min = 0.01, 
+                                 max = 0.05, step = 0.01),
+                    numericInput("y3", "y3 (Defect Rate)", value = 0.03, min = 0.01, 
+                                 max = 0.05, step = 0.01)
                 ),
                 
-                actionButton("compute", "Calculate Probability", class = "btn btn-primary")
+          actionButton("compute", "Calculate Probability", class = "btn btn-primary")
             ),
             
-            mainPanel(
-                h4("Results"),
-                verbatimTextOutput("result"),
-                tags$hr(),
-                div(style = "color: red; font-weight: bold;", textOutput("validation_message"))
-            )
-        )
-    )
+          mainPanel(
+            h4("Results"),
+            verbatimTextOutput("result"),
+            tags$hr(),
+            div(style = "color: red; font-weight: bold;", 
+                textOutput("validation_message"))
+          )
+      )
+  )
 )
 
 # Server Logic
 server <- function(input, output) {
-    observeEvent(input$compute, {
-        x <- c(input$x1, input$x2, input$x3)
-        y <- c(input$y1, input$y2, input$y3)
+  observeEvent(input$compute, {
+      x <- c(input$x1, input$x2, input$x3)
+      y <- c(input$y1, input$y2, input$y3)
         
-        validation_result <- validate_inputs(x, y)
+      validation_result <- validate_inputs(x, y)
         
-        if (validation_result == TRUE) {
-            output$validation_message <- renderText("")
-            defective_prob <- compute_defective_probability(x, y)
-            output$result <- renderText({
-                sprintf("The probability of selecting a defective product is: %.4f", defective_prob)
-            })
-        } else {
-            output$result <- renderText("")
-            output$validation_message <- renderText(validation_result)
-        }
-    })
+      if (validation_result == TRUE) {
+          output$validation_message <- renderText("")
+          defective_prob <- compute_defective_probability(x, y)
+          output$result <- renderText({
+              sprintf("The probability of selecting a defective product is: %.4f", 
+                      defective_prob)
+          })
+      } else {
+          output$result <- renderText("")
+          output$validation_message <- renderText(validation_result)
+      }
+  })
 }
+
 # Run the App
 shinyApp(ui = ui, server = server)
 ```
+
 # Problem 2
-```
+
 With your own computing experience, develop a front end to R that allows the user
 
 -   to input the values of a univariate discrete random variable and the associated probabilities to obtain the mean and variance, and
@@ -132,13 +145,15 @@ With your own computing experience, develop a front end to R that allows the use
 
 Your program should provide a facility to calculate each distribution's mean and variance and plot the pdf and cdf. In each program, do validity checks that the probabilities are in the interval [0, 1], and that they sum to one.
 
-### Code:
+## Code:
 
 ```{r}
 library(shiny)
 library(bslib)
+```
 
-# design for the front end
+```{r}
+# Design for the front end
 modern_theme <- bs_theme(
   version = 5,
   bootswatch = "flatly",
@@ -149,14 +164,14 @@ modern_theme <- bs_theme(
   heading_font = font_google("Roboto")
 )
 
-# validity check
+# Validity check
 validity_check <- function(prob) {
-  if (any(prob < 0 | prob > 1)) return("Error: Probabilities must be in the interval [0,1].")
-  if (abs(sum(prob) - 1) > 1e-6) return("Error: The sum of the probabilities should be 1.")
+  if (any(prob < 0|prob>1)) return("Error: Probabilities must be in the interval [0,1].")
+  if (abs(sum(prob)-1)>1e-6) return("Error: The sum of the probabilities should be 1.")
   return(NULL)
 }
 
-# user interface or UI
+# User interface or UI
 ui <- fluidPage(
   theme = modern_theme,
   tags$head(
@@ -183,7 +198,9 @@ ui <- fluidPage(
         sidebarPanel(
           class = "custom-sidebar",
           textInput("univalue", "Enter values (comma-separated):", "1,2,3"),
-          textInput("probability_uni", "Enter probabilities (comma-separated):", "0.2,0.5,0.3"),
+          textInput("probability_uni",
+                    "Enter probabilities (comma-separated):", 
+                    "0.2,0.5,0.3"),
           actionButton("solve_uni", "Compute")
         ),
         mainPanel(
@@ -200,7 +217,9 @@ ui <- fluidPage(
           class = "custom-sidebar",
           textInput("xvalues", "Enter X values (comma-separated):", "1,2"),
           textInput("yvalues", "Enter Y values (comma-separated):", "1,2"),
-          textAreaInput("bivariate_proba", "Enter probabilities matrix (comma-separated per row):", "0.2,0.3\n0.3,0.2"),
+          textAreaInput("bivariate_proba", 
+                        "Enter probabilities matrix (comma-separated per row):", 
+                        "0.2,0.3\n0.3,0.2"),
           actionButton("solve_bi", "Compute")
         ),
         mainPanel(
@@ -220,7 +239,8 @@ server <- function(input, output) {
   observeEvent(input$solve_uni, {
     if (is.null(input$univalue) || is.null(input$probability_uni) || 
         input$univalue == "" || input$probability_uni == "") {
-      output$results_uni <- renderText("Error: Please enter valid values and probabilities.")
+      output$results_uni<-renderText("Error: Please enter valid values and 
+                                     probabilities.")
       return()
     }
     
@@ -231,7 +251,8 @@ server <- function(input, output) {
     probabilities <- suppressWarnings(as.numeric(probabilities))
     
     if (any(is.na(values)) || any(is.na(probabilities))) {
-      output$results_uni <- renderText("Error: Ensure inputs are numeric and correctly formatted.")
+      output$results_uni<-renderText("Error: Ensure inputs are numeric and correctly 
+                                     formatted.")
       return()
     }
     
@@ -250,12 +271,14 @@ server <- function(input, output) {
     })
     
     output$pdf_uni <- renderPlot({
-      barplot(probabilities, names.arg = values, main = "Probability Density Function (PDF)",
+      barplot(probabilities, names.arg = values, 
+              main ="Probability Density Function (PDF)",
               col = "lightblue", ylim = c(0, max(probabilities) * 1.2))
     })
     
     output$cdf_uni <- renderPlot({
-      plot(values, cdf, type = "s", col = "blue", main = "Cumulative Distribution Function (CDF)",
+      plot(values, cdf, type = "s", col = "blue", 
+           main = "Cumulative Distribution Function (CDF)",
            xlab = "Values", ylab = "Cumulative Probability")
     })
   })
@@ -265,7 +288,8 @@ server <- function(input, output) {
     yvalues <- as.numeric(unlist(strsplit(trimws(input$yvalues), ",")))
     
     matrix_p_lines <- unlist(strsplit(input$bivariate_proba, "\n"))
-    matrix_p_clean <- lapply(matrix_p_lines, function(line) as.numeric(unlist(strsplit(trimws(line), ","))))
+    matrix_p_clean <- lapply(matrix_p_lines, 
+                function(line) as.numeric(unlist(strsplit(trimws(line), ","))))
     matrix_p <- do.call(rbind, matrix_p_clean)
     
     # Debugging prints
@@ -276,8 +300,11 @@ server <- function(input, output) {
 
     # Ensure dimensions match
     if (nrow(matrix_p) != length(xvalues) || ncol(matrix_p) != length(yvalues)) {
-      output$results_bi <- renderText("Error: Matrix dimensions must match the number of X and Y values.")
-      return()
+    output$results_bi <- renderText
+          (
+          "Error: Matrix dimensions must match the number of X and Y values."
+          )
+    return()
     }
 
     error <- validity_check(as.vector(matrix_p))
@@ -304,20 +331,26 @@ server <- function(input, output) {
     })
     
     output$pdf_xplot <- renderPlot({
-      barplot(marginprob_of_x, names.arg = xvalues, col = "pink", main = "Marginal P(X)", ylim = c(0, max(marginprob_of_x) * 1.2))
+      barplot(marginprob_of_x, names.arg = xvalues, col = "pink", 
+              main = "Marginal P(X)", 
+              ylim = c(0, max(marginprob_of_x) * 1.2))
     })
     
     output$pdf_yplot <- renderPlot({
-      barplot(marginprob_of_y, names.arg = yvalues, col = "lightgreen", main = "Marginal P(Y)", ylim = c(0, max(marginprob_of_y) * 1.2))
+      barplot(marginprob_of_y, names.arg = yvalues, col = "lightgreen", 
+              main = "Marginal P(Y)", 
+              ylim = c(0, max(marginprob_of_y) * 1.2))
     })
     
     output$cdf_xplot <- renderPlot({
-      plot(xvalues, cdf_x, type = "s", col = "red", main = "Cumulative P(X)",
+      plot(xvalues, cdf_x, type = "s", col = "red", 
+           main = "Cumulative P(X)",
            xlab = "X Values", ylab = "Cumulative Probability")
     })
     
     output$cdf_yplot <- renderPlot({
-      plot(yvalues, cdf_y, type = "s", col = "purple", main = "Cumulative P(Y)",
+      plot(yvalues, cdf_y, type = "s", col = "purple", 
+           main = "Cumulative P(Y)",
            xlab = "Y Values", ylab = "Cumulative Probability")
     })
   })
@@ -333,7 +366,7 @@ By generating 10,000 searches in R, carry out a simulation experiment for a sear
 
 -   Plot the simulated pdf and calculate its mean and variance, and
 
-### Code:
+## Code:
 
 ```{r}
 library(ggplot2)
@@ -357,7 +390,7 @@ cat("Simulated Variance:", variance_simulated, "\n\n")
 
 -   Obtain the simulated conditional distribution of searches when three searches have been carried out without success. Calculate its mean and variance, and satisfy yourself that they are equivalent to the simulated distribution of the complete set.
 
-### Code
+## Code
 
 ```{r}
 # Plot the simulated probability density function (PDF)
@@ -396,7 +429,7 @@ As test data, assume each site has a **60% chance** of containing the key phrase
 
 **(b)** $P(X = 5 | X > 3)$ and $P(X = 2)$where $X$ is the number of searches required to find the first success.
 
-### Code
+## Code
 
 ```{r}
 cat("P(X = 4 | X > 3):", p_x4_given_x3, "\n")
@@ -405,3 +438,4 @@ cat("P(X = 1):", p_x1, "\n")
 cat("P(X = 2):", p_x2, "\n")
 
 ```
+
