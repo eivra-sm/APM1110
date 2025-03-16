@@ -29,6 +29,7 @@ validate_inputs <- function(x, y) {
   }
   
   return(TRUE)
+
 }
 ```
 
@@ -94,7 +95,7 @@ hist(attempts_searches, probability = TRUE, breaks = max(attempts_searches),
 ```{r}
 # Mean and variance
 mean_searches <- mean(attempts_searches)
-variance_searches <- variance(attempts_searches)
+variance_searches <- var(attempts_searches)
 cat("Mean:", mean_searches, "\nVariance:", variance_searches, "\n")
 ```
 
@@ -108,7 +109,7 @@ conditional_searches <- attempts_searches[attempts_searches > 3]
 ```{r}
 # Computing the Mean and variance for the conditional distribution
 mean_conditional <- mean(conditional_searches)
-variance_conditional <- variance(conditional_searches)
+variance_conditional <- var(conditional_searches)
 cat("Conditional Mean:", mean_conditional, "\nConditional Variance:", variance_conditional, "\n")
 ```
 
