@@ -407,7 +407,7 @@ ggplot(data_frame, aes(x = Searches, y = Probability)) +
   xlab("# of searches to first cuccess") +
   ylab("Probability")
 
-![image](https://github.com/user-attachments/assets/8d21bbcd-00f4-4542-8a84-8a6a1ad8fdbf)
+![](SA 1/Hist_SA1.png)
 
 
 # Conditional Distribution when X > 3
