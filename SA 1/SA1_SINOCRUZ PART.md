@@ -34,18 +34,22 @@ compute_defective_probability <- function(x, y) {
 }
 ```
 
-```r
+```{r}
 # Taking user input
 cat("Enter values for x1, x2, and x3 (separated by space): ")
+```
 
     ## Entervaluesforx1,x2,andx3(separatedbyspace):
 
+```{r}
 x <- as.numeric(strsplit(readline(), " ")[[1]])
-
+```
+```{r}
 cat("Enter values for y1, y2, and y3 (separated by space): ")
+```
 
      ## Enter values for y1, y2, and y3 (separated by space):
-
+```{r}
 y <- as.numeric(strsplit(readline(), " ")[[1]])
 ```
 
@@ -64,6 +68,9 @@ if (validation_result == TRUE) {
   cat(validation_result, "\n")
 }
 ```
+
+     ## Error: The sum of x1, x2, and x3 must be 1.
+     
 
 # Question 3
 
@@ -84,7 +91,7 @@ attempts_searches <- rgeom(num_simulations, prob_success) + 1  # Geometric distr
 
 
 ```{r}
-# Ploting simulated pdf
+# Plotting simulated pdf
 hist(attempts_searches, probability = TRUE, breaks = max(attempts_searches), 
      main = "Simulated Probability Distribution of Searches",
      xlab = "Number of Searches", col = "purple")
@@ -98,6 +105,8 @@ variance_searches <- var(attempts_searches)
 cat("Mean:", mean_searches, "\nVariance:", variance_searches, "\n")
 ```
 
+    ## Mean: 1.6612
+    ## Variance: 1.104725
 
 ```{r}
 # Conditional distribution: given that 3 searches failed
@@ -112,6 +121,9 @@ variance_conditional <- var(conditional_searches)
 cat("Conditional Mean:", mean_conditional, "\nConditional Variance:", variance_conditional, "\n")
 ```
 
+    ## Conditional Mean: 4.643533
+    ## Conditional Variance: 1.16499
+
 ## Part A
 ```{r}
 prob_X4_given_X3 <- mean(attempts_searches == 4) / mean(attempts_searches > 3)
@@ -121,3 +133,6 @@ prob_X1 <- mean(attempts_searches == 1)
 ```{r}
 cat("P(X=4 | X>3):", prob_X4_given_X3, "\nP(X=1):", prob_X1, "\n")
 ```
+
+     ## P(X=4 | X>3): 0.6182965
+     ## P(X=1): 0.6045
