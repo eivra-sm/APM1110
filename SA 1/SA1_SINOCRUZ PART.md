@@ -34,12 +34,18 @@ compute_defective_probability <- function(x, y) {
 }
 ```
 
-```{r}
+```r
 # Taking user input
 cat("Enter values for x1, x2, and x3 (separated by space): ")
+
+    ## Entervaluesforx1,x2,andx3(separatedbyspace):
+
 x <- as.numeric(strsplit(readline(), " ")[[1]])
 
 cat("Enter values for y1, y2, and y3 (separated by space): ")
+
+     ## Enter values for y1, y2, and y3 (separated by space):
+
 y <- as.numeric(strsplit(readline(), " ")[[1]])
 ```
 
