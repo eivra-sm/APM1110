@@ -1,12 +1,5 @@
----
-title: "ARVIE SA1"
-author: "SINOCRUZ, ARVIE"
-date: "2025-03-16"
-output: pdf_document
----
-
 # Question 1
-
+___
 *Note that the "x" is the factory's production and "y" is the defect rates.*
 
 ```{r}
