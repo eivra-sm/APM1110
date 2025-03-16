@@ -1,5 +1,5 @@
 # Question 1
-___
+
 *Note that the "x" is the factory's production and "y" is the defect rates.*
 
 ```{r}
