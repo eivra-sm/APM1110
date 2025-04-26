@@ -7,6 +7,7 @@ output:
   html_document: default
 ---
 
+### github link: https://github.com/eivra-sm/APM1110/blob/576197702b1cdeed8a585cfce0793dc18beff7e9/FA%208/FA8_SEC1_Mercado_Consuelo.md
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
