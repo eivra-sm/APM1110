@@ -5,7 +5,7 @@ Author: Sinocruz, Arvie
 Date: April 30, 2025
 
 ----
-**Github Link:** 
+**Github Link:** https://github.com/eivra-sm/APM1110/blob/main/FA%208/FA8_SEC1_Sinocruz_Arvie.md
 
 ## Number 1
 
