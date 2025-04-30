@@ -13,7 +13,9 @@ An analogue signal received at a detector, measured in microvolts, is
 normally distributed with mean of 200 and variance of 256.
 
 **Given:**
+
 Mean (μ) = 200 μV
+
 Variance = 256 → Standard deviation (σ) = sqrt(256) = 16 μV
 
 **(a) What is the probability that the signal will exceed 224 µV?**
@@ -78,7 +80,7 @@ Mean (μ) = 25 minutes
 
 Variance = 144 → Standard deviation (σ) = sqrt(144) = 12 minutes
 
-**(a) obtain bounds which will include 95% of the downtime of all the customers; **
+**(a) obtain bounds which will include 95% of the downtime of all the customers;**
 ```r
 lower <- qnorm(0.025, 25, 12)
 upper <- qnorm(0.975, 25, 12)
