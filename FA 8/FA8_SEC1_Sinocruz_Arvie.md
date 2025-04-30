@@ -8,61 +8,84 @@ Date: April 30, 2025
 
 **Github Link:** https://github.com/eivra-sm/APM1110/blob/main/FA%208/FA8_SEC1_Sinocruz_Arvie.md 
 
-## Number 1
+# Number 1
 
 An analogue signal received at a detector, measured in microvolts, is
 normally distributed with mean of 200 and variance of 256.
 
-**Given:**
-Mean (μ) = 200 μV
-Variance = 256 → Standard deviation (σ) = sqrt(256) = 16 μV
 
 **(a) What is the probability that the signal will exceed 224 µV?**
 
 ```r
+Given:
+
+Mean (μ) = 200 μV
+
+Variance = 256 → Standard deviation (σ) = sqrt(256) = 16 μV
 prob_a <- 1 - pnorm(224, mean = 200, sd = 16)
+
 cat("The Probability that the signal will exceed 224 µV is", prob_a, "\n")
 ```
 
+    ## The Probability that the signal will exceed 224 µV is 0.0668072.
+    
 **(b) What is the probability that it will be between 186 and 224 µV?**
 ```r
 prob_b <- pnorm(224, 200, 16) - pnorm(186, 200, 16)
+
 cat("The Probability that it will be between 186 and 224 µV is ", prob_b, "\n")
 ```
 
+    ## The Probability that it will be between 186 and 224 µV is 0.7424058. 
+    
 **(c) What is the micro voltage below which 25% of the signals will be?**
 ```r
 quantile_c <- qnorm(0.25, mean = 200, sd = 16)
+
 cat("The micro voltage below which 25% of the signals is", quantile_c, "\n")
 ```
 
+    ## The micro voltage below which 25% of the signals is 189.2082. 
+    
 **(d) What is the probability that the signal will be less than 240 µV, given that it is larger than 210 µV?**
 ```r 
 prob_d <- (pnorm(240, 200, 16) - pnorm(210, 200, 16)) / (1 - pnorm(210, 200, 16))
+
 cat("The probability that the signal will be less than 240 µV is", prob_d, "\n")
 ```
+
+    ## The probability that the signal will be less than 240 µV is 0.9766541.
     
 **(e) Estimate the interquartile range.**
 ```r
 quantile1 <- qnorm(0.25, 200, 16)
 quantile3 <- qnorm(0.75, 200, 16)
 interqr <- quantile3 - quantile1
-cat("The estimated interquantile range is", interqr,  "µV\n")
+
+cat("The estimated interquantile range is", interqr,  "µV.\n")
 ```
 
+    ## The estimated interquantile range is 21.58367 µV.
+    
 **(f) What is the probability that the signal will be less than 220 µV, given that it is larger than 210 µV?**
 ```r
 prob_f <- (pnorm(220, 200, 16) - pnorm(210, 200, 16)) / (1 - pnorm(210, 200, 16))
+
 cat("The probability that the signal will be less than 220 µV is", prob_f, "\n")
 ```
 
+    ## The probability that the signal will be less than 220 µV is 0.6027988.
+    
 **(g) If we know that a received signal is greater than 200 µV, what is the probability that it is in fact greater than 220 µV?**
 ```r
 prob_g <- (1 - pnorm(220, 200, 16)) / (1 - pnorm(200, 200, 16))
+
 cat("The conditional probability that the signal is greater than 200 µV is", prob_g, "\n")
 ```
 
-## Number 2
+    ## The conditional probability that the signal is greater than 200 µV is 0.2112995.
+    
+# Number 2
 
 A manufacturer of a particular type of computer system is interested in
 improving its customer support services. As a first step, its marketing
@@ -84,8 +107,23 @@ Variance = 144 → Standard deviation (σ) = sqrt(144) = 12 minutes
 lower <- qnorm(0.025, 25, 12)
 upper <- qnorm(0.975, 25, 12)
 
-cat("The bound which will include 95% of the downtime of all customers: ", lower,  "minutes to", upper, "minutes \n")
+cat("The bound which will include 95% of the downtime of all customers: ", lower,  
+"minutes to", upper, "minutes \n")
 ```
+
+    ## The bound which will include 95% of the downtime of all customers: 1.480432 minutes 
+    to 48.51957 minutes  .
+
+**(b) obtain the bound above which 10% of the downtime is included.**
+```r
+bound_b <- qnorm(0.90, 25, 12)
+
+cat("The bound above  which 10% of the downtime is included: ", bound_b, "minutes \n")
+```
+
+    ## The bound above  which 10% of the downtime is included: 40.37862 minutes .
+
+
 
 
 **(b) obtain the bound above which 10% of the downtime is included.**
