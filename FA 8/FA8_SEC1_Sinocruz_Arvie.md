@@ -5,7 +5,8 @@ Author: Sinocruz, Arvie
 Date: April 30, 2025
 
 ----
-**Github Link:** https://github.com/eivra-sm/APM1110/blob/main/FA%208/FA8_SEC1_Sinocruz_Arvie.md
+
+**Github Link:** https://github.com/eivra-sm/APM1110/blob/main/FA%208/FA8_SEC1_Sinocruz_Arvie.md 
 
 ## Number 1
 
@@ -13,9 +14,7 @@ An analogue signal received at a detector, measured in microvolts, is
 normally distributed with mean of 200 and variance of 256.
 
 **Given:**
-
 Mean (μ) = 200 μV
-
 Variance = 256 → Standard deviation (σ) = sqrt(256) = 16 μV
 
 **(a) What is the probability that the signal will exceed 224 µV?**
@@ -33,8 +32,8 @@ cat("The Probability that it will be between 186 and 224 µV is ", prob_b, "\n")
 
 **(c) What is the micro voltage below which 25% of the signals will be?**
 ```r
-quartile_c <- qnorm(0.25, mean = 200, sd = 16)
-cat("The micro voltage below which 25% of the signals is", quartile_c, "\n")
+quantile_c <- qnorm(0.25, mean = 200, sd = 16)
+cat("The micro voltage below which 25% of the signals is", quantile_c, "\n")
 ```
 
 **(d) What is the probability that the signal will be less than 240 µV, given that it is larger than 210 µV?**
@@ -45,10 +44,10 @@ cat("The probability that the signal will be less than 240 µV is", prob_d, "\n"
     
 **(e) Estimate the interquartile range.**
 ```r
-quartile1 <- qnorm(0.25, 200, 16)
-quartile3 <- qnorm(0.75, 200, 16)
-interqr <- quartile3 - quartile1
-cat("The estimated interquartile range is", interqr,  "µV\n")
+quantile1 <- qnorm(0.25, 200, 16)
+quantile3 <- qnorm(0.75, 200, 16)
+interqr <- quantile3 - quantile1
+cat("The estimated interquantile range is", interqr,  "µV\n")
 ```
 
 **(f) What is the probability that the signal will be less than 220 µV, given that it is larger than 210 µV?**
@@ -80,7 +79,7 @@ Mean (μ) = 25 minutes
 
 Variance = 144 → Standard deviation (σ) = sqrt(144) = 12 minutes
 
-**(a) obtain bounds which will include 95% of the downtime of all the customers;**
+**(a) obtain bounds which will include 95% of the downtime of all the customers; **
 ```r
 lower <- qnorm(0.025, 25, 12)
 upper <- qnorm(0.975, 25, 12)
@@ -95,5 +94,3 @@ bound_b <- qnorm(0.90, 25, 12)
 
 cat("The bound above  which 10% of the downtime is included: ", bound_b, "minutes \n")
 ```
-
-
