@@ -2,10 +2,12 @@
 title: 'Formative Assessment #8'
 author: "SINOCRUZ, ARVIE"
 date: "2025-04-30"
-output: pdf_document
+output:
+  pdf_document: default
+  html_document: default
 ---
 
-**Github Link:** 
+**Github Link:**  https://github.com/eivra-sm/APM1110/blob/main/FA%208/FA8_SEC1_Sinocruz_Arvie.md 
 
 ## Number 1
 
