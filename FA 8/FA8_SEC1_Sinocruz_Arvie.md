@@ -1,10 +1,10 @@
----
-title: 'Formative Assessment #8'
-author: "SINOCRUZ, ARVIE"
-date: "2025-04-30"
-output: pdf_document
----
+Formative Assessment  #8
 
+Author: Sinocruz, Arvie
+
+Date: April 30, 2025
+
+----
 **Github Link:** 
 
 ## Number 1
