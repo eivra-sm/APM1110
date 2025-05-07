@@ -27,7 +27,7 @@ baon <- c(
 
 ```
 
-# 1. DATASET
+# 1. Dataset
 
 ```{r}
 
