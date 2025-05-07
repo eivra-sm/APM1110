@@ -1,15 +1,14 @@
----
-title: "Formative Assessment 9"
-author: 
-  - "Borromeo, Elisha Sophia B."
-  - "Mayo, Zyan Lynn C."
-  - "Mercado, Consuelo B."
-  - "Sinocruz, Arvie M."
-  - "Tagaytay, Gabriel L."
-date: "2025-05-06"
-output:
-  pdf_document: default
-  html_document: default
+# Formative Assessment 9
+
+Author: 
+  - Borromeo, Elisha Sophia B.
+  - Mayo, Zyan Lynn C.
+  - Mercado, Consuelo B.
+  - Sinocruz, Arvie M.
+  - Tagaytay, Gabriel L.
+    
+Date: April 06, 2025
+
 ---
 
 
