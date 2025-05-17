@@ -101,9 +101,36 @@ cat("Scale:", fitted_scale, "\n")
 
 # Student's t
 ```{r}
-fit_t <- suppressWarnings(
-  fitdistr(returns, densfun = "t", start = list(m = mean(returns), s = sd(returns), df = 5))
+# Define the negative log-likelihood function for Student's t
+neg_log_lik_t <- function(params, data) {
+  m <- params[1]
+  s <- abs(params[2])  # ensure scale > 0
+  df <- params[3]
+  -sum(dt((data - m) / s, df = df, log = TRUE))
+}
+
+# Initialize parameters
+init_params_t <- c(mean(returns), sd(returns), 5)
+
+# Fit Student's t distribution
+fit_t <- optim(
+  par = init_params_t,
+  fn = neg_log_lik_t,
+  data = returns,
+  method = "L-BFGS-B",
+  lower = c(-Inf, 1e-6, 2),
+  upper = c(Inf, Inf, 100)
 )
+
+# Extract fitted parameters
+fitted_m <- fit_t$par[1]
+fitted_s <- abs(fit_t$par[2])
+fitted_df <- fit_t$par[3]
+
+cat("Estimated Student's t parameters:\n")
+cat("Location (mean):", fitted_m, "\n")
+cat("Scale:", fitted_s, "\n")
+cat("Degrees of Freedom:", fitted_df, "\n")
 ```
 
 ### Q-Q Plots
@@ -153,3 +180,4 @@ print(ks_t)
 ```
 ## Interpretation/s:
 Minute-by-minute returns of Bitcoin exhibit heavy tails and non-normality. Additionally, Normal, Laplace, and Student's t distribution fits indicate that the heavy-tailed t distribution usually provides the best fit to the data. However, Q-Q plots and goodness-of-fit tests suggest that there are more extreme returns than a normal model would suggest. In general, Bitcoin returns are high in variability and with large swings happening often, which emphasizes the necessity of employing heavy-tailed models when assessing risk.
+
