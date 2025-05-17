@@ -1,17 +1,21 @@
+
 ---
 title: "Summative Assessment 2"
 author: "Mercado, C & Sinocruz, A."
 date: "2025-05-17"
 output:
+html_document:
   pdf_document:
     latex_engine: xelatex
 ---
-Github Link:
+
+Github Link: **https://github.com/eivra-sm/APM1110/blob/main/SA%202/SA2_APM1110_SEC1_SA2_MERCADO_CONSUELO_SINOCRUZ_ARVIE_SA2.md**
 
 Google Drive Link (for documentation and datasets): **https://drive.google.com/drive/folders/1OP559AJbAJL7jEcspsnIIBlGJG3iYI-0?usp=sharing**
 
 # Part 1
 *Find out which probability distribution function best fits Bitcoin’s returns for trading data every minute, from January 1, 2012 to April 15, 2025, for Bitcoin quoted in United States dollars or the BTC/USD pair.*
+
 
 ### Load Libraries
 
@@ -108,9 +112,36 @@ cat("Scale:", fitted_scale, "\n")
 
 # Student's t
 ```{r}
-fit_t <- suppressWarnings(
-  fitdistr(returns, densfun = "t", start = list(m = mean(returns), s = sd(returns), df = 5))
+# Define the negative log-likelihood function for Student's t
+neg_log_lik_t <- function(params, data) {
+  m <- params[1]
+  s <- abs(params[2])  # ensure scale > 0
+  df <- params[3]
+  -sum(dt((data - m) / s, df = df, log = TRUE))
+}
+
+# Initialize parameters
+init_params_t <- c(mean(returns), sd(returns), 5)
+
+# Fit Student's t distribution
+fit_t <- optim(
+  par = init_params_t,
+  fn = neg_log_lik_t,
+  data = returns,
+  method = "L-BFGS-B",
+  lower = c(-Inf, 1e-6, 2),
+  upper = c(Inf, Inf, 100)
 )
+
+# Extract fitted parameters
+fitted_m <- fit_t$par[1]
+fitted_s <- abs(fit_t$par[2])
+fitted_df <- fit_t$par[3]
+
+cat("Estimated Student's t parameters:\n")
+cat("Location (mean):", fitted_m, "\n")
+cat("Scale:", fitted_s, "\n")
+cat("Degrees of Freedom:", fitted_df, "\n")
 ```
 
 ### Q-Q Plots
@@ -162,11 +193,12 @@ print(ks_t)
 Minute-by-minute returns of Bitcoin exhibit heavy tails and non-normality. Additionally, Normal, Laplace, and Student's t distribution fits indicate that the heavy-tailed t distribution usually provides the best fit to the data. However, Q-Q plots and goodness-of-fit tests suggest that there are more extreme returns than a normal model would suggest. In general, Bitcoin returns are high in variability and with large swings happening often, which emphasizes the necessity of employing heavy-tailed models when assessing risk.
 
 
+
 # Part 2
 *Test using Shapiro-Wilk normality test the Ethereum returns for trading data every five minutes, from August 7, 2015 to April 15, 2025*
 Note: Due to data availability per websites, we have two separate dataset for 2015 to 2020 and 2020 to 2025.*
 
-```{r setup, message=FALSE, warning=FALSE}
+```r
 library(dplyr)
 library(readr)
 library(lubridate)
@@ -175,7 +207,7 @@ library(ggplot2)
 
 ### Dataset
 
-```{r}
+```r
 
 # First dataset (2015 to 2020)
 df1 <- read_csv("ETHUSDT_2015_to_2020.csv", show_col_types = FALSE) %>%
@@ -201,7 +233,7 @@ sample_returns <- sample(combined_df$log_return, sample_size)
 ```
 
 ### Shapiro-Wilk Normality Test
-```{r}
+```r
 shapiro_test <- shapiro.test(sample_returns)
 
 
@@ -221,7 +253,7 @@ if (shapiro_test$p.value > 0.05) {
 
 ### Histogram
 
-```{r}
+```r
 
 # Plot histogram of log returns
 ggplot(data.frame(log_return = sample_returns), aes(x = log_return)) +
