@@ -8,7 +8,8 @@ output: pdf_document
 Github Link:
 
 Google Drive Link: **https://drive.google.com/drive/folders/1OP559AJbAJL7jEcspsnIIBlGJG3iYI-0?usp=sharing**
-# 1
+
+# Part 1
 *Find out which probability distribution function best fits Bitcoin’s returns for trading data every minute, from January 1, 2012 to April 15, 2025, for Bitcoin quoted in United States dollars or the BTC/USD pair.*
 
 ### Loading libraries
