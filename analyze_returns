@@ -1,12 +1,18 @@
 ---
-title: "analyze_returns"
-author: "SINOCRUZ, ARVIE"
+title: "Summative Assessment 2"
+author: "MERCADO, C & SINOCRUZ, A"
 date: "2025-05-17"
 output: pdf_document
 ---
 
+Github Link:
+
+Google Drive Link: **https://drive.google.com/drive/folders/1OP559AJbAJL7jEcspsnIIBlGJG3iYI-0?usp=sharing**
+# 1
+*Find out which probability distribution function best fits Bitcoin’s returns for trading data every minute, from January 1, 2012 to April 15, 2025, for Bitcoin quoted in United States dollars or the BTC/USD pair.*
+
+### Loading libraries
 ```{r setup, include=FALSE}
-# Loading libraries
 library(readr)
 library(ggplot2)
 library(dplyr)
@@ -18,38 +24,38 @@ library(extraDistr)
 library(gridExtra)
 ```
 
-# Read CSV
+### Read CSV
 ```{r}
 df <- read_csv("btcusd_1-min_data.csv")
 ```
 
-# Convert Timestamp to datetime
+### Convert Timestamp to datetime
 ```{r}
 df$Timestamp <- as.POSIXct(df$Timestamp, origin = "1970-01-01", tz = "UTC")
 ```
 
-# Display first 10 entries from 2012
+### Display first 10 entries from 2012
 ```{r}
 df_2012 <- df %>% filter(format(Timestamp, "%Y") == "2012") %>% head(10)
 cat("First 10 entries from 2012:\n")
 print(df_2012)
 ```
 
-# Display first 10 entries from 2025
+### Display first 10 entries from 2025
 ```{r}
 df_2025 <- df %>% filter(format(Timestamp, "%Y") == "2025") %>% head(10)
 cat("\nFirst 10 entries from 2025:\n")
 print(df_2025)
 ```
 
-# Compute log returns
+### Compute log returns
 ```{r}
 df <- df %>% arrange(Timestamp)
 df$log_return <- c(NA, diff(log(df$Close)))
 returns <- na.omit(df$log_return)
 ```
 
-# Histogram with density
+### Histogram with density
 ```{r}
 ggplot(data.frame(returns), aes(x = returns)) +
   geom_histogram(aes(y = after_stat(density)), bins = 200, fill = "skyblue", color = "black") +
@@ -59,35 +65,35 @@ ggplot(data.frame(returns), aes(x = returns)) +
   theme_minimal()
 ```
 
-# Fit Normal
+### Fit Normal
 ```{r}
 fit_norm <- fitdist(returns, "norm")
 ```
 
-# Fit Laplace (double exponential)
+### Fit Laplace (double exponential)
 ```{r}
 fit_laplace <- fitdist(returns, "laplace", start = list(location = mean(returns), scale = sd(returns)))
 ```
 
-# Fit Student's t
+### Fit Student's t
 ```{r}
 fit_t <- fitdistr(returns, "t", start = list(m = mean(returns), s = sd(returns), df = 5))
 ```
 
-# Q-Q Plot: Normal
+### Q-Q Plot: Normal
 ```{r}
 qqnorm(returns, main = "Q-Q Plot: Normal")
 qqline(returns, col = "blue")
 ```
 
-# Q-Q Plot: Laplace
+### Q-Q Plot: Laplace
 ```{r}
 qqplot(qlaplace(ppoints(length(returns)), location = fit_laplace$estimate[1], scale = fit_laplace$estimate[2]),
        returns, main = "Q-Q Plot: Laplace", xlab = "Theoretical", ylab = "Sample")
 abline(0, 1, col = "blue")
 ```
 
-# Q-Q Plot: Student's t
+### Q-Q Plot: Student's t
 ```{r}
 qt_vals <- qt(ppoints(length(returns)), df = fit_t$estimate[3])
 qqplot(qt_vals * fit_t$estimate[2] + fit_t$estimate[1], returns,
@@ -95,7 +101,7 @@ qqplot(qt_vals * fit_t$estimate[2] + fit_t$estimate[1], returns,
 abline(0, 1, col = "blue")
 ```
 
-# Kolmogorov–Smirnov test
+### Kolmogorov–Smirnov test
 ```{r}
 ks_norm <- ks.test(returns, "pnorm", mean = fit_norm$estimate[1], sd = fit_norm$estimate[2])
 ks_laplace <- ks.test(returns, "plaplace", location = fit_laplace$estimate[1], scale = fit_laplace$estimate[2])
@@ -114,7 +120,3 @@ cat("\nStudent's t Distribution:\n")
 print(fit_t)
 print(ks_t)
 ```
-
-
-
-
