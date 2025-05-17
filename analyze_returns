@@ -1,0 +1,120 @@
+---
+title: "analyze_returns"
+author: "SINOCRUZ, ARVIE"
+date: "2025-05-17"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+# Loading libraries
+library(readr)
+library(ggplot2)
+library(dplyr)
+library(fitdistrplus)
+library(MASS)
+library(goftest)
+library(lattice)
+library(extraDistr)
+library(gridExtra)
+```
+
+# Read CSV
+```{r}
+df <- read_csv("btcusd_1-min_data.csv")
+```
+
+# Convert Timestamp to datetime
+```{r}
+df$Timestamp <- as.POSIXct(df$Timestamp, origin = "1970-01-01", tz = "UTC")
+```
+
+# Display first 10 entries from 2012
+```{r}
+df_2012 <- df %>% filter(format(Timestamp, "%Y") == "2012") %>% head(10)
+cat("First 10 entries from 2012:\n")
+print(df_2012)
+```
+
+# Display first 10 entries from 2025
+```{r}
+df_2025 <- df %>% filter(format(Timestamp, "%Y") == "2025") %>% head(10)
+cat("\nFirst 10 entries from 2025:\n")
+print(df_2025)
+```
+
+# Compute log returns
+```{r}
+df <- df %>% arrange(Timestamp)
+df$log_return <- c(NA, diff(log(df$Close)))
+returns <- na.omit(df$log_return)
+```
+
+# Histogram with density
+```{r}
+ggplot(data.frame(returns), aes(x = returns)) +
+  geom_histogram(aes(y = after_stat(density)), bins = 200, fill = "skyblue", color = "black") +
+  geom_density(color = "red") +
+  ggtitle("Bitcoin Minute-by-Minute Returns (2012–2025)") +
+  xlab("Log Return") + ylab("Density") +
+  theme_minimal()
+```
+
+# Fit Normal
+```{r}
+fit_norm <- fitdist(returns, "norm")
+```
+
+# Fit Laplace (double exponential)
+```{r}
+fit_laplace <- fitdist(returns, "laplace", start = list(location = mean(returns), scale = sd(returns)))
+```
+
+# Fit Student's t
+```{r}
+fit_t <- fitdistr(returns, "t", start = list(m = mean(returns), s = sd(returns), df = 5))
+```
+
+# Q-Q Plot: Normal
+```{r}
+qqnorm(returns, main = "Q-Q Plot: Normal")
+qqline(returns, col = "blue")
+```
+
+# Q-Q Plot: Laplace
+```{r}
+qqplot(qlaplace(ppoints(length(returns)), location = fit_laplace$estimate[1], scale = fit_laplace$estimate[2]),
+       returns, main = "Q-Q Plot: Laplace", xlab = "Theoretical", ylab = "Sample")
+abline(0, 1, col = "blue")
+```
+
+# Q-Q Plot: Student's t
+```{r}
+qt_vals <- qt(ppoints(length(returns)), df = fit_t$estimate[3])
+qqplot(qt_vals * fit_t$estimate[2] + fit_t$estimate[1], returns,
+       main = "Q-Q Plot: Student's t", xlab = "Theoretical", ylab = "Sample")
+abline(0, 1, col = "blue")
+```
+
+# Kolmogorov–Smirnov test
+```{r}
+ks_norm <- ks.test(returns, "pnorm", mean = fit_norm$estimate[1], sd = fit_norm$estimate[2])
+ks_laplace <- ks.test(returns, "plaplace", location = fit_laplace$estimate[1], scale = fit_laplace$estimate[2])
+ks_t <- ks.test(returns, function(x) pt((x - fit_t$estimate[1]) / fit_t$estimate[2], df = fit_t$estimate[3]))
+
+cat("\n--- Goodness of Fit Results ---\n")
+cat("\nNormal Distribution:\n")
+print(fit_norm)
+print(ks_norm)
+
+cat("\nLaplace Distribution:\n")
+print(fit_laplace)
+print(ks_laplace)
+
+cat("\nStudent's t Distribution:\n")
+print(fit_t)
+print(ks_t)
+```
+
+
+
+
