@@ -1,14 +1,8 @@
----
-title: "SA2"
-author: "Mercado, C & Sinocruz, A."
-date: "2025-05-17"
-output:
-  pdf_document:
-    latex_engine: xelatex
----
+
 Github Link:
 
 Google Drive Link (for documentation and datasets): **https://drive.google.com/drive/folders/1OP559AJbAJL7jEcspsnIIBlGJG3iYI-0?usp=sharing**
+# Part 1
 
 # Part 2
 *Test using Shapiro-Wilk normality test the Ethereum returns for trading data every five minutes, from August 7, 2015 to April 15, 2025*
