@@ -8,7 +8,7 @@ Sinocruz, Arvie
 
 Date: May 17, 2025
 
-Github Link: 
+Github Link: https://github.com/eivra-sm/APM1110/blob/main/SA%202/SA2_APM1110_SEC1_SA2_MERCADO_CONSUELO_SINOCRUZ_ARVIE_SA2.md
 
 Google Drive Link (for documentation and datasets): **https://drive.google.com/drive/folders/1OP559AJbAJL7jEcspsnIIBlGJG3iYI-0?usp=sharing**
 
